@@ -12,7 +12,8 @@ function App() {
   return (
     <Router>
       <Header />
-      <main className="container my-5">
+    {/*<main className="container my-4">*/}
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -21,7 +22,7 @@ function App() {
           <Route path="/galleries" element={<Galleries />} />
           <Route path="/services" element={<Services />} />
         </Routes>
-      </main>
+     {/* </main>*/}
       <Footer />
     </Router>
   );
