@@ -1,143 +1,413 @@
 import React, { useState, useEffect,useRef } from 'react';
 import Slider from "react-slick";
 
+import { FaInstagram, FaFacebookF } from 'react-icons/fa';
+import { Navbar, Nav, Button, Container, Carousel, Offcanvas ,NavDropdown,} from 'react-bootstrap';
 import '../App.css'; // optional, for custom styles
 
 const WeddingPhotography = () => {
-  const testimonials = [
-  {
-    id: 1,
-    image: "https://placehold.co/100x100/FFC0CB/FFFFFF?text=Pooja",
-    text: "The pictures turned out beautiful! We got the complimentary frame & magazine...",
-    name: "POOJA ELANGOVAN",
-  },
-  {
-    id: 2,
-    image: "https://placehold.co/100x100/ADD8E6/FFFFFF?text=Mansoor",
-    text: "Thank you so much for such a beautiful collection of photos...",
-    name: "MANSOOR KHAN",
-  },
-  {
-    id: 3,
-    image: "https://placehold.co/100x100/90EE90/FFFFFF?text=Dikshitha",
-    text: "Best work! Best team! Excellent workmanship! Delivered on time.",
-    name: "DIKSHITHA A CHANDRASEKAR",
-  },
-  {
-    id: 4,
-    image: "https://placehold.co/100x100/FFD700/FFFFFF?text=Rina",
-    text: "I am definitely gonna come back for outdoor shoots and will recommend...",
-    name: "RINA",
-  },
+ 
+  const image = [
+    "five.jpg",
+    "four.jpg",
+    "third.jpg",
+    "second.jpg",
+    "four.jpg",
+    "five.jpg",
+   "four.jpg",
+    "third.jpg",
+    "second.jpg",
+    "four.jpg",
+  ];
+
+ const [index, setIndex] = useState(0); // real index
+const [visibleCount, setVisibleCount] = useState(window.innerWidth <= 768 ? 4 : 5);
+const [isTransitioning, setIsTransitioning] = useState(true);
+const trackRef = useRef(null);
+const intervalRef = useRef(null);
+
+const totalSlides = image.length;
+
+// Duplicate head and tail
+const extendedImages = [
+  ...image.slice(-visibleCount), // tail clone
+  ...image,
+  ...image.slice(0, visibleCount) // head clone
 ];
-
-
-const images = [
-  "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-  "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-];
-
-const [centerIndex, setCenterIndex] = useState(2);
 
 useEffect(() => {
-  const interval = setInterval(() => {
-    setCenterIndex((prevIndex) => (prevIndex + 1) % images.length);
-  }, 4000);
-  return () => clearInterval(interval);
+  const handleResize = () => {
+    setVisibleCount(window.innerWidth <= 768 ? 4 : 5);
+  };
+
+  window.addEventListener("resize", handleResize);
+  startAutoSlide();
+
+  return () => {
+    clearInterval(intervalRef.current);
+    window.removeEventListener("resize", handleResize);
+  };
 }, []);
 
-const getIndex = (offset) =>
-  (centerIndex + offset + images.length) % images.length;
+useEffect(() => {
+  if (index === totalSlides) {
+    // End reached → reset to start
+    setTimeout(() => {
+      setIsTransitioning(false);
+      setIndex(0);
+    }, 4000); // match transition time
+  } else {
+    setIsTransitioning(true);
+  }
+}, [index]);
+
+const startAutoSlide = () => {
+  clearInterval(intervalRef.current);
+  intervalRef.current = setInterval(() => {
+    setIndex((prev) => prev + 1);
+  }, 12000);
+};
+
+
+
+
+
+const [navbarClass, setNavbarClass] = useState("transparent");
+     const [offcanvasShow, setOffcanvasShow] = useState(false);
+
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    const nextSection = document.getElementById("next-section");
+
+    if (!nextSection) return;
+
+    const nextSectionTop = nextSection.getBoundingClientRect().top;
+
+    if (scrollY === 0) {
+      setNavbarClass("transparent"); // Top of the page
+    } else if (nextSectionTop <= 0) {
+      setNavbarClass("dark"); // Scrolled into next section
+    } else {
+      setNavbarClass("hidden"); // Scrolling in first section
+    }
+  };
 
  
+  useEffect(() => {
+    handleScroll(); // Run on mount
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
+ const [showDropdown, setShowDropdown] = useState(false);
+
+  const handleMouseEnter = () => setShowDropdown(true);
+  const handleMouseLeave = () => setShowDropdown(false);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleDownArrowClick = () => {
+    const nextSection = document.getElementById("next-section");
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const slides = [
+  { id: 1, content: "RHAPSODY<br />OF LOVE" },
+  { id: 2, content: "AMOROUS<br />SAGA" },
+];
+
+const testimonials = [
+  { name: "Pooja Elangovan", message: "The pictures turned out beautiful! We got the complimentary frame & magazine... ", image: "second.jpg" },
+  { name: "Mansoor Khan", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "third.jpg" },
+  { name: "Dikshithia", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "four.jpg" },
+  { name: "Rina Shah", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "five.jpg" },
+  { name: "Fatima Noor", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "/images/test5.jpg" },
+  { name: "Arjun Mehta", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "first_img.jpg" },
+  { name: "Deepak Nair", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "third.jpg" },
+  { name: "Shruti Verma", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "four.jpg" },
+  { name: "Naveen R", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "second.jpg" },
+  { name: "Aisha Patel", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "five.jpg" },
+];
+
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+const [testimonialVisibleCount, setTestimonialVisibleCount] = useState(window.innerWidth <= 768 ? 4 : 5);
+const [isTestimonialTransitioning, setIsTestimonialTransitioning] = useState(true);
+const testimonialTrackRef = useRef(null);
+const testimonialIntervalRef = useRef(null);
+
+const totalTestimonials = testimonials.length;
+
+// Clone head and tail for seamless loop
+const extendedTestimonials = [
+  ...testimonials.slice(-testimonialVisibleCount),
+  ...testimonials,
+  ...testimonials.slice(0, testimonialVisibleCount),
+];
+
+// Start autoplay
+const startTestimonialAutoSlide = () => {
+  clearInterval(testimonialIntervalRef.current);
+  testimonialIntervalRef.current = setInterval(() => {
+    setTestimonialIndex((prev) => prev + 1);
+  }, 12000); // 12s
+};
+
+useEffect(() => {
+  const handleResize = () => {
+    setTestimonialVisibleCount(window.innerWidth <= 768 ? 4 : 5);
+  };
+  window.addEventListener("resize", handleResize);
+  startTestimonialAutoSlide();
+
+  return () => {
+    clearInterval(testimonialIntervalRef.current);
+    window.removeEventListener("resize", handleResize);
+  };
+}, []);
+
+useEffect(() => {
+  if (testimonialIndex === totalTestimonials) {
+    setTimeout(() => {
+      setIsTestimonialTransitioning(false);
+      setTestimonialIndex(0);
+    }, 4000); // Match transition time
+  } else {
+    setIsTestimonialTransitioning(true);
+  }
+}, [testimonialIndex]);
+
+const handleTestimonialDotClick = (i) => {
+  setTestimonialIndex(i);
+  startTestimonialAutoSlide(); // Reset timer
+};
+
+const images = [
+  'first_img.jpg', 'second.jpg', 'third.jpg', 'four.jpg', 'five.jpg',
+  'first_img.jpg', 'second.jpg', 'third.jpg', 'four.jpg', 'five.jpg',
+];
+
+
+const MAX_VISIBLE = 3;
+
+
+  const [center, setCenter] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(null);
+  const [deltaX, setDeltaX] = useState(0);
+  const total = images.length;
+
+  // Auto-rotate
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isDragging) {
+        setCenter((prev) => (prev + 1) % total);
+      }
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [isDragging, total]);
+
+  const getRelativeIndex = (index) => {
+    let diff = index - center;
+    if (diff > total / 2) diff -= total;
+    if (diff < -total / 2) diff += total;
+    return diff;
+  };
+
+  // Mouse & touch drag handlers
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.clientX);
+  };
+
+
+
+  const handleMouseUp = () => {
+    if (!isDragging) return;
+
+    if (deltaX > 50) {
+      setCenter((prev) => (prev - 1 + total) % total);
+    } else if (deltaX < -50) {
+      setCenter((prev) => (prev + 1) % total);
+    }
+
+    setIsDragging(false);
+    setDeltaX(0);
+  };
+
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleMouseMove = (e) => {
+  if (!isDragging) return;
+  const moveX = e.clientX - startX;
+
+  setDeltaX(moveX);
+
+  if (moveX > 50) {
+    setCenter((prev) => (prev - 1 + total) % total);
+    setIsDragging(false);
+    setDeltaX(0);
+  } else if (moveX < -50) {
+    setCenter((prev) => (prev + 1) % total);
+    setIsDragging(false);
+    setDeltaX(0);
+  }
+};
+
+const handleTouchMove = (e) => {
+  if (!isDragging) return;
+  const moveX = e.touches[0].clientX - startX;
+
+  setDeltaX(moveX);
+
+  if (moveX > 50) {
+    setCenter((prev) => (prev - 1 + total) % total);
+    setIsDragging(false);
+    setDeltaX(0);
+  } else if (moveX < -50) {
+    setCenter((prev) => (prev + 1) % total);
+    setIsDragging(false);
+    setDeltaX(0);
+  }
+};
+
+  const handleTouchEnd = () => {
+    if (!isDragging) return;
+
+    if (deltaX > 50) {
+      setCenter((prev) => (prev - 1 + total) % total);
+    } else if (deltaX < -50) {
+      setCenter((prev) => (prev + 1) % total);
+    }
+
+    setIsDragging(false);
+    setDeltaX(0);
+  };
 
   return (
+<>
+    <section className="wb-banner-wrap">
+      <video
+        className="wb-banner-bg"
+        src="https://weddingbellsstories.com/video_library/three.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+      <div className="wb-social">
+        <a
+          href="https://www.instagram.com/weddingbellsphotography/?hl=en"
+          aria-label="Instagram"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaInstagram />
+        </a>
+        <a
+          href="https://www.facebook.com/weddingbells123/"
+          aria-label="Facebook"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaFacebookF />
+        </a>
+      </div>
+      <div className="wb-banner-content">
+         <Carousel
+    controls={false}
+    indicators={false}
+    interval={4000}
+    className="custom-centered-carousel"
+  >
+    {slides.map((slide) => (
+      <Carousel.Item key={slide.id}>
+        <div className="d-flex flex-column align-items-center justify-content-center h-100 w-100">
+          <h1
+            className="display-1 mb-0 text-center text-white"
+            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}
+            dangerouslySetInnerHTML={{ __html: slide.content }}
+          />
+        </div>
+      </Carousel.Item>
+    ))}
+  </Carousel>
+
+        <div className="wb-banner-logo">
+          <img 
+            src="https://weddingbellsstories.com/media_library/weddingbells-image-hqdqu2.svg" 
+            alt="Wedding Bells" 
+          />
+          <div className="wb-logo-text">SNAPPY TIMES</div>
+        </div>
+      </div>
+     <div className="intimate-arrow" onClick={handleDownArrowClick}>
+  <span className="arrow"></span>
+</div>
+
+    </section>
     <div  id="next-section" className="wedding-photography bg-light">
       {/* Section 1: Hero with Image and Text */}
-      <div className="container-fluid px-0">
-  <div className="row g-0 align-items-center">
-    {/* Left image with no padding or margin */}
-    <div className="col-md-6">
-      <img
-        src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
-        alt="Wedding"
-        className="img-fluid img-custom w-100 h-60 object-fit-cover"
-        style={{ maxHeight: "100vh" }}
-      />
+     <div className="container my-5">
+      <div className="row align-items-center">
+        {/* Left: Text Content */}
+        <div className="col-lg-6 text-md-start text-center mb-4 mb-lg-0">
+          <p className="text-uppercase small text-muted">HELLO, WE ARE GLAD YOU FOUND US!</p>
+          <h1 className="fw-bold mb-3 hero-heading">Welcome to Zero Gravity Photography!</h1>
+          <p className="hero-paragraph">
+            We are one of the top wedding photography studios around the country that has started to expand its horizons throughout the globe. Our team of wedding photographers is here to assist you in having a meaningful, stress-free, and real event while uniquely documenting your love. We want to be available for you all day long and that includes from the get go.
+            <br /><br />
+            
+            We also do Creative pre-wedding photography for our bride and groom. We are passionate about each and every frame, and our team works very hard to make sure that you will cherish your special day for a lifetime with their expert wedding photography; we have always enjoyed being a part of a distinctive Indian Wedding, and we can't wait to be a part of yours!
+          </p>
+        </div>
+
+        {/* Right: Image */}
+        <div className="col-lg-6 text-center">
+          <img
+            src="first_img.jpg"
+            alt="Wedding Couple"
+            className="img-fluid hero-image"
+          />
+        </div>
+      </div>
     </div>
-
-    {/* Right content with elegant style */}
-    <div className="col-md-6 d-flex flex-column justify-content-center align-items-start p-5 animate-slide-in">
-  <h2 className="display-4 fw-bold mb-4" style={{ fontFamily: "Georgia, serif", color: "#000000ff" }}>
-    Elegant Wedding Moments
-  </h2>
-  <p className="lead text-secondary" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-    Let your moments unfold naturally. Our photography captures the charm, laughter, and emotions of your wedding without interruptions — letting your day flow as beautifully as your story.
-  </p>
-  <a href="#" className="btn btn-danger btn-lg mt-3 rounded-pill shadow">
-    Explore Gallery
-  </a>
-</div>
-
-  </div>
-</div>
 
       {/* Section 2: Full-width Container with Text and Image */}
-              <div className="gallery-container bg-white ">
-      {/* Left Tall Image */}
-      <div className="image-box tall-frame">
-        <img
-          src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80"
-          alt="Left"
-          className="tall-image"
-        />
-      </div>
-
-      {/* Center Square Image + Text */}
-     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-  {/* Image inside a styled frame */}
+       <div className="custom-carousel-container py-5">
   <div
+    ref={trackRef}
+    className="custom-carousel-track"
     style={{
-      width: '500px',
-      height: '500px',
-      border: '10px solid #fff',
-      borderRadius: '8px',
-      overflow: 'hidden',
-      background:'white',
-      padding:'12px',
-      boxShadow:'0px 6px  18px rgba(0, 0, 0, 0.1)'
+      transform: `translateX(-${(100 / visibleCount) * (index + visibleCount)}%)`,
+      transition: isTransitioning ? 'transform 4s ease-in-out' : 'none'
     }}
   >
-    <img
-      src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=800&q=80"
-      alt="Center"
-      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-    />
+    {extendedImages.map((img, i) => (
+      <div key={i} className="custom-carousel-item">
+        <img src={img} alt={`img-${i}`} className="custom-carousel-image" />
+      </div>
+    ))}
   </div>
 
-  {/* Text BELOW the image frame */}
-  <div  style={{ textAlign: 'center', marginTop: '20px' }}>
-    <h2>Wedding Moments</h2>
-    <p>Capturing the magic forever</p>
-    <blockquote style={{ fontStyle: 'italic', marginTop: '10px' }}>
-      “Photography is the story I fail to put into words.” – Destin Sparks
-    </blockquote>
+  <div className="custom-carousel-indicators">
+    {[...Array(totalSlides)].map((_, i) => (
+      <span
+        key={i}
+        onClick={() => setIndex(i)}
+        className={`dot ${index % totalSlides === i ? 'active' : ''}`}
+      />
+    ))}
   </div>
 </div>
 
-
-      {/* Right Tall Image */}
-      <div className="image-box tall-frame">
-        <img
-          src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=800&q=80"
-          alt="Right"
-          className="tall-image"
-        />
-      </div>
-    </div>
 
       {/* Section 3: Centered Text */}
 <div className="d-flex justify-content-center align-items-center text-center mt-5" style={{ minHeight: '30vh' }}>
@@ -152,254 +422,264 @@ const getIndex = (offset) =>
   </div>
 </div>
       {/* Section 4: Full-width Image with Text Overlay */}
+<div className='bg-white'>
+<div className="wedding-category-section m-5">
+  <div className="category-grid">
+    <div className="category-item">
+      <img src="second.jpg" alt="Brahmin Wedding" />
+      <div className="overlay-text">Brahmin Wedding</div>
+    </div>
+    <div className="category-item">
+      <img src="first_img.jpg" alt="North Indian Wedding" />
+      <div className="overlay-text">North Indian Wedding</div>
+    </div>
+    <div className="category-item">
+      <img src="third.jpg" alt="Birthday Photography" />
+      <div className="overlay-text">Birthday Photography</div>
+    </div>
+    <div className="category-item">
+      <img src="four.jpg" alt="Christian Wedding" />
+      <div className="overlay-text">Christian Wedding</div>
+    </div>
+    <div className="category-item">
+      <img src="five.jpg" alt="Muslim Wedding" />
+      <div className="overlay-text">Muslim Wedding</div>
+    </div>
+    <div className="category-item">
+      <img src="first_img.jpg" alt="Malayali Wedding" />
+      <div className="overlay-text">Malayali Wedding</div>
+    </div>
+  </div>
+</div>
 
-<div className="container py-5 bg-white">
+</div>
+
+
+
+   {/* Section 5: Wedding Couple Highlight */}
+   
+<div className="bg-light">
+
+    <div className="container my-5 p-3">
   <div className="row align-items-center">
-    {/* Left: Image with centered heading overlay */}
-    <div className="col-md-6 position-relative">
+    
+    {/* Left Column: Text and Button */}
+    <div className="col-md-6">
+      <h2 className="fw-bold mb-3">Sai Kruthi & Bharathi</h2>
+      <p className="text-secondary mb-4">
+        A sweet tale of love, from fighting as colleagues to falling in love. 
+        Their love story is no less of a Bollywood tale. Everything about this 
+        wedding looked like it was taken out of a movie.
+      </p>
+      <button className="btn btn-outline-danger btn-lg rounded-pill shadow">
+        Explore Wedding Albums
+      </button>
+    </div>
+
+    {/* Right Column: Image */}
+    <div className="col-md-6 mt-4 mt-md-0">
       <img
-        src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1200&q=80"
+        src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
         alt="Wedding Couple"
-        className="img-fluid rounded-3 w-100"
-        style={{ height: '100%', objectFit: 'cover', minHeight: '450px' }}
+        className="img-fluid img-height "
         onError={(e) => {
           e.target.onerror = null;
-          e.target.src = "https://placehold.co/1200x450/000000/FFFFFF?text=Image+Unavailable";
+          e.target.src = "https://placehold.co/800x600/CCCCCC/333333?text=Image+Unavailable";
         }}
       />
-      <div
-        className="position-absolute top-50 start-50 translate-middle text-white text-center px-4 py-2"
-        style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.8)',
-          borderRadius: '10px',
+    </div>
+    
+
+  </div>
+</div>
+
+    <div className="container my-5 p-3">
+  <div className="row align-items-center">
+    
+    {/* Left Column: Text and Button */}
+    <div className="col-md-6">
+      <h2 className="fw-bold mb-3">Sai Kruthi & Bharathi</h2>
+      <p className="text-secondary mb-4">
+        A sweet tale of love, from fighting as colleagues to falling in love. 
+        Their love story is no less of a Bollywood tale. Everything about this 
+        wedding looked like it was taken out of a movie.
+      </p>
+      <button className="btn btn-outline-danger btn-lg rounded-pill shadow">
+        Explore Wedding Albums
+      </button>
+    </div>
+
+    {/* Right Column: Image */}
+    <div className="col-md-6 mt-4 mt-md-0">
+      <img
+        src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
+        alt="Wedding Couple"
+        className="img-fluid img-height"
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = "https://placehold.co/800x600/CCCCCC/333333?text=Image+Unavailable";
         }}
-      >
-        <h2 className="m-0" style={{ fontSize: '2rem', fontWeight: 'bold' }}>
-          We take our craft seriously.
-        </h2>
+      />
+    </div>
+    
+
+  </div>
+</div>
+</div>
+    {/* Section 6: Testimonial Carousel */}
+  <div className="testimonial-carousel-wrapper">
+  <div
+    className={`testimonial-track ${isTestimonialTransitioning ? "transition" : ""}`}
+    style={{
+      transform: `translateX(-${(100 / testimonialVisibleCount) * (testimonialIndex + testimonialVisibleCount)}%)`,
+    }}
+    ref={testimonialTrackRef}
+  >
+    {extendedTestimonials.map((t, i) => (
+      <div className="testimonial-card" key={i}>
+        <img src={t.image} alt={`testimonial-${i}`} className="testimonial-img" />
+        <p>{t.message}</p>
+        <h5 className="testimonial-name">{t.name}</h5>
+      </div>
+    ))}
+  </div>
+
+  <div className="testimonial-indicators">
+    {[...Array(totalTestimonials)].map((_, i) => (
+      <span
+        key={i}
+        className={`dot ${i === testimonialIndex % totalTestimonials ? "active" : ""}`}
+        onClick={() => handleTestimonialDotClick(i)}
+      />
+    ))}
+  </div>
+</div>
+
+
+
+    {/* Section 7: Wedding Moments Showcase */}
+        <div
+      className="seamless-carousel"
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      <div className="seamless-carousel-inner">
+        {images.map((src, i) => {
+          const offset = getRelativeIndex(i);
+          if (Math.abs(offset) > MAX_VISIBLE) return null;
+
+          const scale = 1 - Math.abs(offset) * 0.1;
+          const translateX = offset * 140 + (offset === 0 ? deltaX : 0);
+          const zIndex = 999 - Math.abs(offset);
+          const brightness = offset === 0 ? 1 : 0.9;
+          const opacity = 1 - Math.abs(offset) * 0.08;
+
+          return (
+            <div
+              key={i}
+              className="carousel-img-wrapper"
+              style={{
+                transform: `translate(-50%, -50%) translateX(${translateX}px) scale(${scale})`,
+                filter: `brightness(${brightness})`,
+                zIndex,
+                opacity,
+              }}
+            >
+              <img src={src} alt={`carousel-${i}`} />
+              <button className="click-btn">Click Here</button>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+      
+  
+
+
+
+
+<div className="container my-5">
+  <h2 className="text-center mb-4">Photography FAQs</h2>
+  <div className="accordion" id="accordionPanelsStayOpenExample">
+    
+    <div className="accordion-item">
+      <h2 className="accordion-header" id="panelsStayOpen-headingOne">
+        <button className="accordion-button" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+          aria-controls="panelsStayOpen-collapseOne">
+          What is included in your wedding photography package?
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show"
+        aria-labelledby="panelsStayOpen-headingOne">
+        <div className="accordion-body">
+          Our wedding package includes full-day coverage, an online gallery, high-resolution edited photos, and a custom photo album.
+        </div>
       </div>
     </div>
 
-    {/* Right: Text content aligned beside image */}
-    <div className="col-md-6 mt-4 mt-md-0">
-      <h4 className="text-muted mb-2">What Do We Do?</h4>
-      <p className="text-secondary fs-5 mb-4">
-        We believe that a wedding should be all about the couple and not only about
-        customs, or what the family wants, or a series of posed pictures with odd lighting.
-        From straightforward coverage to themed documentary-style wedding albums, the
-        field of wedding photography and videography in India has changed. In order to
-        preserve our distinctive fun and offbeat approach, we focus on candid moments, genuine emotions,
-        and telling your unique love story through our lens. We strive to create timeless memories that truly
-        reflect the joy and authenticity of your special day.
-      </p>
-      <button className="btn btn-primary btn-lg rounded-pill shadow">
-        Discover Our Approach
-      </button>
-    </div>
-  </div>
-</div>
-
-   {/* Section 5: Wedding Couple Highlight */}
-
-    <div className="container my-5 p-3">
-  <div className="row align-items-center">
-    
-    {/* Left Column: Text and Button */}
-    <div className="col-md-6">
-      <h2 className="fw-bold mb-3">Sai Kruthi & Bharathi</h2>
-      <p className="text-secondary mb-4">
-        A sweet tale of love, from fighting as colleagues to falling in love. 
-        Their love story is no less of a Bollywood tale. Everything about this 
-        wedding looked like it was taken out of a movie.
-      </p>
-      <button className="btn btn-outline-danger btn-lg rounded-pill shadow">
-        Explore Wedding Albums
-      </button>
-    </div>
-
-    {/* Right Column: Image */}
-    <div className="col-md-6 mt-4 mt-md-0">
-      <img
-        src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
-        alt="Wedding Couple"
-        className="img-fluid img-height rounded-3 "
-        onError={(e) => {
-          e.target.onerror = null;
-          e.target.src = "https://placehold.co/800x600/CCCCCC/333333?text=Image+Unavailable";
-        }}
-      />
-    </div>
-    
-
-  </div>
-</div>
-
-
-    <div className="container my-5 p-3">
-  <div className="row align-items-center">
-    
-    {/* Left Column: Text and Button */}
-    <div className="col-md-6">
-      <h2 className="fw-bold mb-3">Sai Kruthi & Bharathi</h2>
-      <p className="text-secondary mb-4">
-        A sweet tale of love, from fighting as colleagues to falling in love. 
-        Their love story is no less of a Bollywood tale. Everything about this 
-        wedding looked like it was taken out of a movie.
-      </p>
-      <button className="btn btn-outline-danger btn-lg rounded-pill shadow">
-        Explore Wedding Albums
-      </button>
-    </div>
-
-    {/* Right Column: Image */}
-    <div className="col-md-6 mt-4 mt-md-0">
-      <img
-        src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
-        alt="Wedding Couple"
-        className="img-fluid img-height rounded-3"
-        onError={(e) => {
-          e.target.onerror = null;
-          e.target.src = "https://placehold.co/800x600/CCCCCC/333333?text=Image+Unavailable";
-        }}
-      />
-    </div>
-    
-
-  </div>
-</div>
-    {/* Section 6: Testimonial Carousel */}
-<section className="container py-5">
-  <h2 className="text-center fw-bold mb-5">What Our Clients Say</h2>
-
-  <div
-    id="testimonialCarousel"
-    className="carousel slide"
-    data-bs-ride="carousel"
-    data-bs-interval="20000" // 20 seconds
-  >
-    {/* Black Carousel Indicators */}
-    <div className="carousel-indicators">
-      {[0, 1, 2, 3].map((index) => (
-        <button
-          key={index}
-          type="button"
-          data-bs-target="#testimonialCarousel"
-          data-bs-slide-to={index}
-          className={index === 0 ? "active" : ""}
-          aria-current={index === 0 ? "true" : "false"}
-          aria-label={`Slide ${index + 1}`}
-          style={{
-            backgroundColor: 'black',
-            width: '12px',
-            height: '12px',
-            borderRadius: '50%',
-            margin: '0 5px',
-          }}
-        />
-      ))}
-    </div>
-
-    {/* Carousel Inner */}
-    <div className="carousel-inner">
-      {[0, 1, 2, 3].map((i) => (
-        <div key={i} className={`carousel-item ${i === 0 ? "active" : ""}`}>
-          <div className="row justify-content-center">
-            {[0, 1, 2].map((offset) => {
-              const testimonial = testimonials[(i + offset) % testimonials.length];
-              return (
-                <div key={testimonial.id} className="col-lg-4 col-md-6 mb-4">
-                  <div className="card h-100 text-center p-4 border-1 ">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="rounded-circle mx-auto mb-3 border border-3 border-secondary"
-                      style={{ width: '100px', height: '100px', objectFit: 'cover' }}
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = "https://placehold.co/100x100/CCCCCC/333333?text=User";
-                      }}
-                    />
-                    <p className="card-text text-muted mb-3" style={{ minHeight: '150px' }}>
-                      "{testimonial.text}"
-                    </p>
-                    <h5 className="fw-bold text-dark">{testimonial.name}</h5>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+    <div className="accordion-item">
+      <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
+        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseTwo">
+          How long does it take to receive the final photos?
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingTwo">
+        <div className="accordion-body">
+          Final edited images are delivered within 2–3 weeks. During peak season, delivery might take up to 4 weeks.
         </div>
-      ))}
+      </div>
     </div>
 
-    {/* Black Carousel Controls */}
-    <button
-      className="carousel-control-prev"
-      type="button"
-      data-bs-target="#testimonialCarousel"
-      data-bs-slide="prev"
-    >
-      <span
-        className="carousel-control-prev-icon"
-        aria-hidden="true"
-        style={{ filter: 'invert(1)' }}
-      ></span>
-      <span className="visually-hidden">Previous</span>
-    </button>
-    <button
-      className="carousel-control-next"
-      type="button"
-      data-bs-target="#testimonialCarousel"
-      data-bs-slide="next"
-    >
-      <span
-        className="carousel-control-next-icon"
-        aria-hidden="true"
-        style={{ filter: 'invert(1)' }}
-      ></span>
-      <span className="visually-hidden">Next</span>
-    </button>
-  </div>
-</section>
+    <div className="accordion-item">
+      <h2 className="accordion-header" id="panelsStayOpen-headingThree">
+        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseThree">
+          Do you travel for destination photography?
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingThree">
+        <div className="accordion-body">
+          Yes, we travel worldwide for destination weddings and shoots. Travel and accommodation charges may apply.
+        </div>
+      </div>
+    </div>
 
-    {/* Section 7: Wedding Moments Showcase */}
+    <div className="accordion-item">
+      <h2 className="accordion-header" id="panelsStayOpen-headingFour">
+        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseFour">
+          Can we request specific styles or poses?
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseFour" className="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingFour">
+        <div className="accordion-body">
+          Absolutely! We welcome your ideas and will work with you to capture your preferred styles and poses.
+        </div>
+      </div>
+    </div>
 
-    <div className="carousel-gallery container-fluid p-0 d-flex justify-content-center align-items-center">
-  <div className="gallery-wrapper">
-    <img
-      src={images[getIndex(-2)]}
-      className="gallery-image outer-img left2"
-      alt="outer-left"
-    />
-    <img
-      src={images[getIndex(-1)]}
-      className="gallery-image side-img left1"
-      alt="left"
-    />
-    <img
-      src={images[centerIndex]}
-      className="gallery-image center-img center"
-      alt="center"
-    />
-    <img
-      src={images[getIndex(1)]}
-      className="gallery-image side-img right1"
-      alt="right"
-    />
-    <img
-      src={images[getIndex(2)]}
-      className="gallery-image outer-img right2"
-      alt="outer-right"
-    />
   </div>
 </div>
 
 
 
 
-
-
     </div>
+
+    </>
   );
 };
 
