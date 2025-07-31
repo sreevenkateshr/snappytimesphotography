@@ -27,7 +27,7 @@ export default function Birthday() {
     <div className="col-md-4">
       <img
         src="five.jpg"
-        className="img-fluid rounded object-fit-cover"
+        className="img-fluid rounded object-fit-cover theme-image"
         style={{ width: "400px", height: "400px", objectFit: "cover", margin: "0 auto", display: "block" }}
         alt="Kids Theme"
       />
@@ -36,7 +36,7 @@ export default function Birthday() {
     <div className="col-md-4">
       <img
         src="four.jpg"
-        className="img-fluid rounded object-fit-cover"
+        className="img-fluid rounded object-fit-cover theme-image"
         style={{ width: "400px", height: "400px", objectFit: "cover", margin: "0 auto", display: "block" }}
         alt="Cake Smash"
       />
@@ -45,7 +45,7 @@ export default function Birthday() {
     <div className="col-md-4">
       <img
         src="third.jpg"
-        className="img-fluid rounded object-fit-cover"
+        className="img-fluid rounded object-fit-cover theme-image"
         style={{ width: "400px", height: "400px", objectFit: "cover", margin: "0 auto", display: "block" }}
         alt="Elegant Party"
       />
@@ -60,7 +60,7 @@ export default function Birthday() {
   <div className="container">
     <div className="row justify-content-center">
       {/* Left Carousel */}
-      <div className="col-md-6 mb-4 d-flex flex-column align-items-center">
+      <div className="col-md-6 mb-4 d-flex flex-column align-items-center carousel-wrapper">
         <Carousel
           interval={3000}
           fade
@@ -89,7 +89,7 @@ export default function Birthday() {
       </div>
 
       {/* Right Carousel */}
-      <div className="col-md-6 mb-4 d-flex flex-column align-items-center">
+      <div className="col-md-6 mb-4 d-flex flex-column align-items-center carousel-wrapper">
         <Carousel
           interval={3000}
           fade

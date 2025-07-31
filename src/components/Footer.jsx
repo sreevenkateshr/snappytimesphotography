@@ -18,42 +18,42 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Section */}
-      <div className="bg-light border-top py-4">
-        <div className="container text-center text-lg-start">
-          <div className="row align-items-center justify-content-between text-center">
+      
+<footer className="footer-container">
+  <div className="footer-left">
+    <img src="logo.jpg" alt="Snappy Logo" className="footer-logo" />
+    <h3 className="brand-name">Snappy Photography</h3>
+  </div>
 
-            {/* Get in Touch */}
-            <div className="col-md-4 mb-3 mb-md-0">
-              <h6 className="fw-bold text-uppercase">Get in Touch</h6>
-              <p className="mb-0 text-muted">
-                <a href="mailto:snappytimes.in@gmail.com" className="text-dark text-decoration-none fw-semibold">
-                  snappytimes.in@gmail.com
-                </a>
-              </p>
-            </div>
+  <div className="footer-center">
+    <h4>Capturing Moments, Crafting Stories</h4>
+    <p>
+      At Snappy Photography, we believe every photo tells a story — your story.
+      Whether it’s a fleeting smile, a quiet glance, or a vibrant celebration,
+      we’re here to freeze those emotions in time with passion and precision.
+    </p>
+    <p className="footer-signature">— The Snappy Team 📸</p>
+  </div>
 
-            {/* Logo/Quote */}
-            <div className="col-md-4 mb-3 mb-md-0 border-start border-end">
-              <h6 className="fw-bold mb-2">SnappyTimes Photography</h6>
-              <p className="fst-italic text-muted">
-                "Every frame tells a story. On your special day, we capture moments that last a lifetime."
-              </p>
-            </div>
+  <div className="footer-right">
+    <h4>Contact</h4>
+    <p>Email: hello@myphotography.com</p>
+    <p>Phone: +91 98765 43210</p>
+    <p>Location: Chennai, India</p>
 
-            {/* Social Links */}
-            <div className="col-md-4">
-              <h6 className="fw-bold text-uppercase">Connect Us</h6>
-              <div className="d-flex justify-content-center gap-3 mt-2">
-                <a href="#" className="text-dark fs-5"><i className="bi bi-instagram"></i></a>
-                <a href="#" className="text-dark fs-5"><i className="bi bi-facebook"></i></a>
-                <a href="#" className="text-dark fs-5"><i className="bi bi-pinterest"></i></a>
-              </div>
-            </div>
+    <form className="subscribe-form">
+      <input type="email" placeholder="Email address" />
+      <button type="submit">Subscribe</button>
+    </form>
 
-          </div>
-        </div>
-      </div>
-
+    <div className="social-icons">
+      <i className="fab fa-facebook-f"></i>
+      <i className="fab fa-instagram"></i>
+      <i className="fab fa-twitter"></i>
+      <i className="fab fa-youtube"></i>
+    </div>
+  </div>
+</footer>
       {/* Copyright */}
       <div className="bg-white py-2 border-top">
         <div className="container text-center small text-muted">
