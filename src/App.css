@@ -910,10 +910,7 @@ footer ul.nav .nav-link:hover {
     height: 400px;
   }
 
-  .carousel-img-wrapper {
-    top: 10%;
-    left: 30%;
-  }
+ 
 
   .carousel-img-wrapper img {
     width: 180px;
@@ -942,3 +939,159 @@ footer ul.nav .nav-link:hover {
     font-size: 12px;
   }
 }
+
+
+.counter-section {
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.counter-section {
+  font-family: 'Roboto Slab', serif;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+
+
+
+
+.about-banner {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.owner-img {
+  transition: transform 0.3s ease-in-out;
+}
+.owner-img:hover {
+  transform: scale(1.05);
+}
+
+
+
+.photography-details {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Icon Grid Styles */
+.icon-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.icon-box:hover {
+  transform: translateY(-8px);
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* Team Section */
+.team-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.team-img:hover {
+  transform: scale(1.05);
+}
+
+.our-process-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.zigzag-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    180deg,
+    #ffc107,
+    #ffc107 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.step-icon .icon-circle {
+  font-size: 40px;
+  background-color: #ffc107;
+  color: #fff;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+.wedding-box {
+  overflow: hidden;
+  position: relative;
+  height: 250px;
+}
+
+.wedding-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.wedding-box:hover img {
+  transform: scale(1.05);
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.wedding-box:hover .overlay-text {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+
+.carousel-inner img {
+  transition: transform 0.5s ease;
+}
+
+.carousel-inner img:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+

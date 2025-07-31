@@ -291,6 +291,57 @@ const handleTouchMove = (e) => {
     setDeltaX(0);
   };
 
+
+    const stats = [
+  { value: 12, label: "Locations" },
+  { value: 10000, label: "Weddings", suffix: "+" },
+  { value: 200, label: "Employees", prefix: "+" },
+  { value: 1, label: "Dream" },
+];
+
+    const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+  const [counts, setCounts] = useState(stats.map(() => 0));
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!visible) return;
+
+    stats.forEach((stat, i) => {
+      let start = 0;
+      const end = stat.value;
+      const duration = 1500;
+      const increment = end / (duration / 16);
+
+      const interval = setInterval(() => {
+        start += increment;
+        setCounts(prev => {
+          const newCounts = [...prev];
+          newCounts[i] = start < end ? Math.round(start) : end;
+          return newCounts;
+        });
+
+        if (start >= end) clearInterval(interval);
+      }, 16);
+    });
+  }, [visible]);
+
+
+
   return (
 <>
     <section className="wb-banner-wrap">
@@ -360,7 +411,7 @@ const handleTouchMove = (e) => {
         {/* Left: Text Content */}
         <div className="col-lg-6 text-md-start text-center mb-4 mb-lg-0">
           <p className="text-uppercase small text-muted">HELLO, WE ARE GLAD YOU FOUND US!</p>
-          <h1 className="fw-bold mb-3 hero-heading">Welcome to Zero Gravity Photography!</h1>
+          <h1 className="fw-bold mb-3 hero-heading">Welcome to Snappy Times Photography!</h1>
           <p className="hero-paragraph">
             We are one of the top wedding photography studios around the country that has started to expand its horizons throughout the globe. Our team of wedding photographers is here to assist you in having a meaningful, stress-free, and real event while uniquely documenting your love. We want to be available for you all day long and that includes from the get go.
             <br /><br />
@@ -599,6 +650,22 @@ const handleTouchMove = (e) => {
     </div>
       
   
+      <div className="counter-section py-5 bg-white text-center" ref={sectionRef}>
+      <div className="container">
+        <div className="row">
+          {stats.map((stat, i) => (
+            <div className="col-6 col-md-3 mb-4" key={i}>
+              <h2 className="display-5">
+                {stat.prefix || ""}
+                {counts[i].toLocaleString()}
+                {stat.suffix || ""}
+              </h2>
+              <p className="fs-5">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
 
 
 

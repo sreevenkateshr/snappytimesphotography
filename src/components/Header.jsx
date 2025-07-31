@@ -77,7 +77,7 @@ export default function Header() {
       <Container fluid >
 
         <Navbar.Brand
-  href="#"
+  href="/"
   className={`d-flex align-items-center ${offcanvasShow ? 'd-none d-lg-flex' : ''}`}
 >
   <img
@@ -145,13 +145,13 @@ export default function Header() {
               <Nav.Link href="/about" className="nav-underline">
                 About Us
               </Nav.Link>
-              <Nav.Link href="#contact" className="nav-underline">
+              <Nav.Link href="/contact" className="nav-underline">
                 Contact Us
               </Nav.Link>
-              <Nav.Link href="#blogs" className="nav-underline">
+              <Nav.Link href="/blogs" className="nav-underline">
                 Blogs
               </Nav.Link>
-              <Nav.Link href="#testimonials" className="nav-underline">
+              <Nav.Link href="/testimonials" className="nav-underline">
                 Testimonials
               </Nav.Link>
 

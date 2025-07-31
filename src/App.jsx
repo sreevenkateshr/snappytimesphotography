@@ -7,6 +7,11 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import Galleries from './pages/Galleries';
 import Services from './pages/Services';
+import Birthday from './pages/Birthday';
+import Testimonial from './pages/Testimonial';
+import Outdoor from './pages/Outdoor';
+
+
 
 function App() {
   return (
@@ -18,9 +23,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/blogs" element={<Blog />} />
           <Route path="/galleries" element={<Galleries />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/wedding" element={<Services />} />
+          <Route path="/birthday" element={<Birthday />} />
+          <Route path="/testimonials" element={<Testimonial />} />
+          <Route path="/outdoor" element={<Outdoor />} />
         </Routes>
      {/* </main>*/}
       <Footer />

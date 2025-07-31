@@ -1,7 +1,12 @@
 export default function Contact() {
   return (
     <div>
-      <h2>Contact Us</h2>
+      <div
+        className="about-banner d-flex align-items-center justify-content-center text-white text-center"
+        style={{ backgroundImage: `url("first_img.jpg")` }}
+      >
+        <h1 className="display-3 fw-bold">CONTACT</h1>
+      </div>
       <form className="row g-3">
         <div className="col-md-6">
           <label className="form-label">Name</label>
