@@ -125,10 +125,10 @@ export default function Birthday() {
 
 
 <div className="text-center mb-5">
-        <h1 className="display-4 fw-bold">Birthday Photography</h1>
+        <h2 className="display-5 fw-bold">Birthday Photography</h2>
         <blockquote className="blockquote mt-3">
           <p className="mb-0">"Every birthday is a fresh start — a new chance to create beautiful memories."</p>
-          <footer className="blockquote-footer mt-2">Snappy Photography</footer>
+          <footer className="blockquote-footer mt-2 footer-signature">Snappy Photography</footer>
         </blockquote>
       </div>
       {/* 3. Behind the Scenes */}

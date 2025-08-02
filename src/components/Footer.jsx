@@ -18,21 +18,29 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Section */}
-      
-<footer className="footer-container">
+ <footer className="footer-container">
   <div className="footer-left">
-    <img src="logo.jpg" alt="Snappy Logo" className="footer-logo" />
-    <h3 className="brand-name">Snappy Photography</h3>
+    <h4>Why Choose Us?</h4>
+    <p>
+      With years of experience and a passion for storytelling, Snappy Photography
+      brings your moments to life. From weddings to portraits, we capture it all with
+      creativity, care, and clarity.
+    </p>
+    <p>
+  <i className="fas fa-camera-retro"></i> Professional &nbsp;|&nbsp;
+  <i className="fas fa-palette"></i> Creative &nbsp;|&nbsp;
+  <i className="fas fa-handshake"></i> Friendly
+</p>
   </div>
 
   <div className="footer-center">
     <h4>Capturing Moments, Crafting Stories</h4>
     <p>
-      At Snappy Photography, we believe every photo tells a story — your story.
+      At Snappy Photography, we believe every photo tells a story .
       Whether it’s a fleeting smile, a quiet glance, or a vibrant celebration,
       we’re here to freeze those emotions in time with passion and precision.
     </p>
-    <p className="footer-signature">— The Snappy Team 📸</p>
+    <p className="footer-signature">— The Snappy Team</p>
   </div>
 
   <div className="footer-right">
@@ -40,11 +48,6 @@ export default function Footer() {
     <p>Email: hello@myphotography.com</p>
     <p>Phone: +91 98765 43210</p>
     <p>Location: Chennai, India</p>
-
-    <form className="subscribe-form">
-      <input type="email" placeholder="Email address" />
-      <button type="submit">Subscribe</button>
-    </form>
 
     <div className="social-icons">
       <i className="fab fa-facebook-f"></i>
@@ -54,6 +57,7 @@ export default function Footer() {
     </div>
   </div>
 </footer>
+
       {/* Copyright */}
       <div className="bg-white py-2 border-top">
         <div className="container text-center small text-muted">
@@ -69,7 +73,7 @@ export default function Footer() {
         rel="noopener noreferrer"
         className="btn position-fixed d-flex justify-content-center align-items-center"
         style={{
-          bottom: '80px',
+          bottom: '20px',
           left: '20px',
           borderRadius: '50%',
           backgroundColor: '#25D366',

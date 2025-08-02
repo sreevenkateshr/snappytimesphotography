@@ -2,7 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 /* Hover underline only under text */
 
-
+h2,h3,h4,h5,h6{
+  font-Family: 'Playfair Display, serif' 
+}
+p{
+  
+ font-Family: 'Open Sans, sans-serif'
+}
 /* Optional: Add transition to Book Now button */
 .btn-book-now {
   transition: all 0.3s ease-in-out;
@@ -753,6 +759,10 @@ footer ul.nav .nav-link:hover {
 @media (max-width: 768px) {
   .category-grid {
     grid-template-columns: repeat(2, 1fr);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .category-item img {
@@ -1436,117 +1446,101 @@ footer ul.nav .nav-link:hover {
   }
 }
 
-
-
 .footer-container {
   display: flex;
-  justify-content: space-between;
-  padding: 40px 60px;
-  background-color: #ffffff;
-  color: #eee;
-  flex-wrap: wrap;
-  gap: 40px;
+  flex-direction: column;
+  
+    background-color: #f8f9fa; /* Light background */
+  color: #212529; /* Dark text */
+  
+  padding: 40px 20px;
+  gap: 30px;
 }
 
-.footer-left,
-.footer-center,
-.footer-right {
-  flex: 1 1 300px;
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .footer-left {
+    flex: 2;
+    padding: 10px;
+     border-right: 2px solid #ccc;
+  }
+
+  .footer-center {
+    flex: 2;
+    padding: 10px;
+     border-right: 2px solid #ccc;
+  }
+
+  .footer-left i {
+  color: #585157;
+  margin-right: 5px;
 }
 
-.footer-logo {
-  width: 60px;
-  margin-bottom: 10px;
+
+  .footer-right {
+    flex: 1.5;
+    padding: 10px;
+    max-width: 320px;
+  }
 }
 
-.brand-name {
+.footer-left h4,
+.footer-center h4,
+.footer-right h4 {
   font-size: 1.4rem;
-  font-weight: bold;
-  color: #fff;
-}
-
-.footer-center h4 {
-  color: #fff;
-  font-size: 1.2rem;
   margin-bottom: 10px;
+  font-family: 'Playfair Display', serif; 
+  font-weight: bold;
+  
 }
 
-.footer-center p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ccc;
+.footer-center p,
+.footer-left p,
+.footer-right p {
+  font-size: 1.1rem;
+  font-family: 'Lora', serif;
+
+  line-height: 1.5;
 }
 
 .footer-signature {
-  font-style: italic;
+  font-family: 'Great Vibes', cursive! important;
+  font-size: 1.5rem! important;
+  font-weight: normal;
   margin-top: 10px;
-  color: #888;
-}
-
-.footer-right h4 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: #fff;
-}
-
-.subscribe-form {
-  margin: 15px 0;
-}
-
-.subscribe-form input {
-  padding: 8px;
-  border: none;
-  border-radius: 4px 0 0 4px;
-  width: 60%;
-}
-
-.subscribe-form button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  background-color: #ffc107;
-  color: #000;
-  cursor: pointer;
+  color: #000000;
 }
 
 .social-icons {
   display: flex;
   gap: 15px;
-  margin-top: 10px;
-  font-size: 1.2rem;
+  margin-top: 15px;
 }
 
 .social-icons i {
+  font-size: 1.3rem;
+  color: #181717;
+  transition: color 0.3s;
   cursor: pointer;
-  color: #ccc;
-  transition: color 0.3s ease;
 }
 
-.social-icons i:hover {
-  color: #ffc107;
+.social-icons i:nth-child(1):hover {
+  color: #3b5998;
 }
 
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-left,
-  .footer-center,
-  .footer-right {
-    flex: 1 1 100%;
-  }
-
-  .subscribe-form input {
-    width: 100%;
-    margin-bottom: 10px;
-    border-radius: 4px;
-  }
-
-  .subscribe-form button {
-    width: 100%;
-    border-radius: 4px;
-  }
+.social-icons i:nth-child(2):hover {
+  color: #e1306c;
 }
+
+.social-icons i:nth-child(3):hover {
+  color: #1da1f2;
+}
+
+.social-icons i:nth-child(4):hover {
+  color: #ff0000;
+}
+

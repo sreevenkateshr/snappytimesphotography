@@ -1,5 +1,9 @@
 
 import { Container, Row, Col,Card } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
+
 const testimonialsData = [
   {
     name: 'Anjali Verma',
@@ -34,7 +38,7 @@ const testimonialsData = [
   {
     name: 'Amit Patel',
     feedback: 'Very patient and detail-oriented. Worth every rupee!',
-    rating: 5,
+    rating: 4,
     img: 'first_img.jpg'
   }
 ];
@@ -95,7 +99,13 @@ export default function Testimonial() {
             <Card.Title>{testimonial.name}</Card.Title>
             <Card.Text>{testimonial.feedback}</Card.Text>
             <div>
-              {'⭐'.repeat(testimonial.rating)}{'☆'.repeat(5 - testimonial.rating)}
+             {[...Array(5)].map((_, index) => (
+  <FontAwesomeIcon
+    key={index}
+    icon={index < testimonial.rating ? solidStar : regularStar}
+    style={{ color: '#FFD700', marginRight: '2px' }}
+  />
+))}
             </div>
           </Card.Body>
         </Card>
@@ -116,7 +126,7 @@ export default function Testimonial() {
                 <img
                   src={testimonial.img}
                   alt={testimonial.name}
-                  className="img-fluid rounded-circle"
+                  className=" rounded-circle"
                   style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                 />
               </Col>
@@ -124,7 +134,13 @@ export default function Testimonial() {
                 <Card.Title>{testimonial.name}</Card.Title>
                 <Card.Text>{testimonial.feedback}</Card.Text>
                 <div>
-                  {'⭐'.repeat(testimonial.rating)}{'☆'.repeat(5 - testimonial.rating)}
+                 {[...Array(5)].map((_, index) => (
+  <FontAwesomeIcon
+    key={index}
+    icon={index < testimonial.rating ? solidStar : regularStar}
+    style={{ color: '#FFD700', marginRight: '2px' }}
+  />
+))}
                 </div>
               </Col>
             </Row>

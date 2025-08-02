@@ -126,7 +126,7 @@ const testimonials = [
   { name: "Mansoor Khan", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "third.jpg" },
   { name: "Dikshithia", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "four.jpg" },
   { name: "Rina Shah", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "five.jpg" },
-  { name: "Fatima Noor", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "/images/test5.jpg" },
+  { name: "Fatima Noor", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "four.jpg" },
   { name: "Arjun Mehta", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "first_img.jpg" },
   { name: "Deepak Nair", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "third.jpg" },
   { name: "Shruti Verma", message: "The pictures turned out beautiful! We got the complimentary frame & magazine...", image: "four.jpg" },
@@ -511,7 +511,7 @@ const handleTouchMove = (e) => {
    
 <div className="bg-light">
 
-    <div className="container my-5 p-3">
+    <div className="container mb-5 my-5 p-3">
   <div className="row align-items-center">
     
     {/* Left Column: Text and Button */}
@@ -578,7 +578,7 @@ const handleTouchMove = (e) => {
 </div>
 </div>
     {/* Section 6: Testimonial Carousel */}
-  <div className="testimonial-carousel-wrapper">
+  <div className="testimonial-carousel-wrapper mt-5 mb-5 bg-white p-5">
   <div
     className={`testimonial-track ${isTestimonialTransitioning ? "transition" : ""}`}
     style={{
@@ -610,7 +610,7 @@ const handleTouchMove = (e) => {
 
     {/* Section 7: Wedding Moments Showcase */}
         <div
-      className="seamless-carousel"
+      className="seamless-carousel mb-5 mt-5"
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}

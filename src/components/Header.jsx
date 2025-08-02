@@ -106,15 +106,17 @@ export default function Header() {
   className="bg-dark text-white full-width-offcanvas"
 >
 
-          <Offcanvas.Header closeButton className="bg-dark text-white">
-            <Offcanvas.Title className="text-white"><img
-            src="logo.jpg"
-            alt="Logo"
-            width="40"
-            className="me-2"
-            style={{ padding: "5px" }}
-          />
-          <span className="brand-text">SnappyTimes</span></Offcanvas.Title>
+          <Offcanvas.Header  closeButton className="bg-dark text-white">
+              <a href="/" className="d-flex align-items-center text-white text-decoration-none">
+    <img
+      src="logo.jpg"
+      alt="Logo"
+      width="40"
+      className="me-2"
+      style={{ padding: "5px" }}
+    />
+    <span className="brand-text">SnappyTimes</span>
+  </a>
           </Offcanvas.Header>
 
           <Offcanvas.Body className="d-flex flex-column align-items-center justify-content-center text-center mulish ">
