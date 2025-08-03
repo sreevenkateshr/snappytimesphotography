@@ -10,6 +10,9 @@ import Services from './pages/Services';
 import Birthday from './pages/Birthday';
 import Testimonial from './pages/Testimonial';
 import Outdoor from './pages/Outdoor';
+import Indoor from './pages/Indoor';
+
+
 
 
 
@@ -29,6 +32,8 @@ function App() {
           <Route path="/birthday" element={<Birthday />} />
           <Route path="/testimonials" element={<Testimonial />} />
           <Route path="/outdoor" element={<Outdoor />} />
+          <Route path="/indoor" element={<Indoor />} />
+          
         </Routes>
      {/* </main>*/}
       <Footer />
