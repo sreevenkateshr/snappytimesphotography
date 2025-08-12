@@ -118,13 +118,13 @@ export default function Header() {
                     menuVariant="light"
                     className="nav-dropdown-hover"
                   >
-                    <NavDropdown.Item className="nav-underline" href="/wedding/hindu">
+                    <NavDropdown.Item className="nav-underline" href="/hindu">
                       Hindu
                     </NavDropdown.Item>
-                    <NavDropdown.Item className="nav-underline" href="/wedding/christian">
+                    <NavDropdown.Item className="nav-underline" href="/christian">
                       Christian
                     </NavDropdown.Item>
-                    <NavDropdown.Item className="nav-underline" href="/wedding/muslim">
+                    <NavDropdown.Item className="nav-underline" href="/muslim">
                       Muslim
                     </NavDropdown.Item>
                   </NavDropdown>

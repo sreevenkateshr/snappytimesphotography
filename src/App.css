@@ -1,5 +1,8 @@
 /* Header.jsx */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+
+
 /* Hover underline only under text */
 
 h2,h3,h4,h5,h6{
@@ -1094,16 +1097,8 @@ footer ul.nav .nav-link:hover {
   transition: transform 0.5s ease;
 }
 
-.carousel-inner img:hover {
-  transform: scale(1.03);
-  cursor: pointer;
-}
 
-.modal-content img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
+
 
 
 
@@ -1388,8 +1383,8 @@ footer ul.nav .nav-link:hover {
   }
 
   .carousel-item img {
-    width: 100% !important;
-    height: 400px!important;
+    width: 100% ;
+    height: 400px;
   }
 
   .carousel-wrapper {
@@ -1543,4 +1538,388 @@ footer ul.nav .nav-link:hover {
 .social-icons i:nth-child(4):hover {
   color: #ff0000;
 }
+
+
+
+
+
+
+/*hindu wedding */
+/* Side-Scrolling Layout */
+/* Intro Section */
+.intro h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.intro{
+  margin-top: 50px;
+}
+.intro p {
+  font-size: 1.2rem;
+  font-style: italic;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Card Section */
+.wedding-card img {
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.wedding-card {
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+
+.wedding-card img {
+  border-radius: 0 !important;
+}
+
+
+.wedding-card .card-title {
+  font-weight: 500;
+}
+
+/* Gallery Section */
+.gallery-img {
+  overflow: hidden;
+  
+}
+
+
+
+.gallery-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  
+}
+.gallery-column{
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+}
+
+.gallery-img:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-img.small {
+  height: 150px;
+}
+
+.gallery-img.medium {
+  height: 300px;
+}
+
+.gallery-img.large {
+  height: 600px;
+}
+
+@media (max-width: 768px) {
+  .gallery-img.small {
+    height: 75px !important;
+  }
+  .gallery-img.medium {
+    height: 150px !important;
+  }
+  .gallery-img.large {
+    height: 300px !important;
+  }
+}
+
+.small-icon {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+}
+
+.caption-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #444;
+}
+
+
+.custom-modal-content {
+  background-color: rgba(0, 0, 0, 0.85); /* Dark transparent background */
+  border: none;
+}
+
+.custom-backdrop {
+  background-color: rgba(0, 0, 0, 0.7); /* Backdrop transparency */
+}
+
+@media (max-width: 768px) {
+  .custom-modal-content {
+    background-color: rgba(0, 0, 0, 0.95);
+  }
+}
+
+
+
+.carousel-slide-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.side-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side-images img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.center-image {
+  text-align: center;
+  margin: 0 30px;
+}
+
+.center-image img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  border: 3px solid #ff6b81;
+}
+
+.center-image p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+
+@media (max-width: 767px) {
+  .carousel-center-image {
+    display: none;
+  }
+}
+
+
+
+
+
+.birthday-gallery-section {
+
+  padding-bottom: 3rem;
+}
+
+/* Fancy heading with underline */
+.fancy-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  position: relative;
+  display: block; /* Change from inline-block to block */
+  text-align: center; /* Center the text */
+}
+
+.fancy-heading::after {
+  content: "";
+  display: block;
+  width: 90px; /* Or any fixed width */
+  height: 4px;
+  background: #ffc107;
+  margin: 10px auto 0; /* 'auto' centers it horizontally */
+}
+
+/* Image wrapper with hover effect */
+.image-wrappers {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-wrappers:hover {
+  transform: scale(1.01);
+}
+
+/* Image style */
+.creative-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Overlay text on hover */
+.overlay-text {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  font-weight: 500;
+  font-size: 1.2rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.image-wrappers:hover .overlay-text {
+  transform: translateY(0);
+}
+
+
+
+/* Fancy Heading */
+.fancy-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-align: center;
+  position: relative;
+  display: block;
+}
+
+/* Hexagon Image Style */
+.hexagon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hexagon {
+  width: 190px;
+  height: 164px;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(
+    50% 0%,
+    93% 25%,
+    93% 75%,
+    50% 100%,
+    7% 75%,
+    7% 25%
+  );
+  transition: transform 0.5s ease;
+}
+
+.hexagon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Animation */
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-prop {
+  animation: scaleUp 1s ease forwards;
+  opacity: 0;
+}
+
+
+
+.outfit-card {
+  background: #ffffff;
+  border: 2px solid #f8d7da;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+}
+
+.outfit-card:hover {
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  transform: translateY(-5px);
+}
+
+.outfit-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 3px solid #ffb6b9;
+  transition: box-shadow 0.3s ease;
+}
+
+.image-container {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.outfit-name {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #555;
+}
+
+
+.polaroid-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.polaroid-item {
+  background: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 200px;
+  transform-origin: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.polaroid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+/* Slight Tilt Styles */
+.tilt-0 {
+  transform: rotate(-4deg);
+}
+.tilt-1 {
+  transform: rotate(2deg);
+}
+.tilt-2 {
+  transform: rotate(-2deg);
+}
+
+
+
 

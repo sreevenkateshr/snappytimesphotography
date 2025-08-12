@@ -11,6 +11,9 @@ import Birthday from './pages/Birthday';
 import Testimonial from './pages/Testimonial';
 import Outdoor from './pages/Outdoor';
 import Indoor from './pages/Indoor';
+import Hindu from './pages/hindu';
+import Muslim from './pages/muslim';
+import Christain from './pages/christain';
 
 
 
@@ -33,6 +36,9 @@ function App() {
           <Route path="/testimonials" element={<Testimonial />} />
           <Route path="/outdoor" element={<Outdoor />} />
           <Route path="/indoor" element={<Indoor />} />
+          <Route path="/hindu" element={<Hindu />} />
+          <Route path="/muslim" element={<Muslim />} /> 
+          <Route path="/christian" element={<Christain />} />
           
         </Routes>
      {/* </main>*/}
