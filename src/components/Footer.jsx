@@ -66,7 +66,16 @@ export default function Footer() {
       {/* Copyright */}
       <div className="bg-white py-3 border-top">
         <div className="container text-center small text-muted">
-          © {new Date().getFullYear()} SnappyTimes — All rights reserved | Developed by <span className="fw-semibold"></span>
+          © {new Date().getFullYear()} SnappyTimes — All rights reserved | 
+          Developed by{" "}
+          <a 
+            href="https://sherlinag-portfolio-link.com"  // 👉 replace with Sherlinag’s actual portfolio URL
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="fw-semibold text-decoration-none text-dark"
+          >
+            Sherlin AG
+          </a>
         </div>
       </div>
 
