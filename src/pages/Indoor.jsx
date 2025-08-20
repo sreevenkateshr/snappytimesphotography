@@ -35,7 +35,7 @@ export default function Birthday() {
                   alt={`Birthday Moment ${i + 1}`}
                   className="img-fluid creative-image"
                 />
-                <div className="overlay-text">Memory #{i + 1}</div>
+                <div className="overlay-text1">Memory #{i + 1}</div>
               </div>
             </div>
           ))}

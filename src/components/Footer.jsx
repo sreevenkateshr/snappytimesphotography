@@ -28,10 +28,17 @@ export default function Footer() {
           <div className="row gy-4">
             
             {/* Left */}
-            <div className="col-md-4">
+            <div className="col-md-4 text-center text-md-start">
               <h5 className="fw-bold mb-3">Get in Touch</h5>
-              <p className="mb-1">📧 Snappytimesphotography@gmail.com</p>
-              <p>📍 Chennai, India</p>
+              <p className="mb-1">
+  <i className="fas fa-envelope me-2"></i>
+  Snappytimesphotography@gmail.com
+</p>
+<p>
+  <i className="fas fa-map-marker-alt me-2"></i>
+  Chennai, India
+</p>
+
             </div>
 
             {/* Center */}
@@ -46,9 +53,18 @@ export default function Footer() {
 
             {/* Right */}
             <div className="col-md-4 text-md-end text-center">
-              <h5 className="fw-bold mb-3">Contact</h5>
-              <p className="mb-1">📧 contact@snappyphotography.com</p>
-              <p className="mb-1">📞 +91 98765 43210</p>
+              <h5 className="fw-bold mb-3">Connect</h5>
+              {/* <p className="mb-1">
+  <i className="fas fa-envelope me-2"></i>
+  
+  contact@snappyphotography.com
+</p> */}
+             <p className="mb-1">
+  {/* Desktop/Laptop Icon */}
+  <i className="bi bi-telephone-fill me-2 d-none d-md-inline"></i>
+  <i className="bi bi-telephone-fill me-2 d-md-none"></i>
+  +91 98765 43210
+</p>
 
               {/* Social Icons */}
               <div className="d-flex justify-content-md-end justify-content-center gap-3 fs-5 mt-2">

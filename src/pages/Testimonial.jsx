@@ -42,7 +42,7 @@ export default function Testimonial() {
       </div>
 
       {/* Featured Testimonials */}
-      <Container className="my-5">
+      <Container className="my-5" id="next-section">
         <h2 className="text-center mb-4">Featured Testimonials</h2>
         <p className="lead text-center text-muted mb-5">
           Real stories from our happy clients who trusted us with their special moments.

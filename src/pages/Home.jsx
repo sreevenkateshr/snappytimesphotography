@@ -475,7 +475,8 @@ Every frame we capture is filled with passion, precision, and artistry. With our
 </div>
       {/* Section 4: Full-width Image with Text Overlay */}
 <div className='bg-white'>
-<div className="wedding-category-section m-5">
+<div className="wedding-category-section p-5 ">
+  <h2 className="text-center bold mb-4 py-2">Explore Our Wedding Photography Categories</h2>
   <div className="category-grid">
     <div className="category-item">
       <img src="second.jpg" alt="Brahmin Wedding" />
@@ -505,14 +506,40 @@ Every frame we capture is filled with passion, precision, and artistry. With our
 </div>
 
 </div>
+{/* 
+    <section className="why-choose-us py-5">
+      <div className="container">
+        <div className="row align-items-center">
+          
+          
+          <div className="col-md-7">
+            <h4 className="why-title mb-3">Why Choose Us?</h4>
+            <p className="why-text">
+              With years of experience and a passion for storytelling, Snappy
+              Photography brings your moments to life. From weddings to portraits,
+              we capture it all with creativity, care, and clarity.
+            </p>
+          </div>
 
+          
+          <div className="col-md-5 text-md-end text-center">
+            <p className="why-features">
+              <i className="fas fa-camera-retro"></i> Professional &nbsp;|&nbsp;
+              <i className="fas fa-palette"></i> Creative &nbsp;|&nbsp;
+              <i className="fas fa-handshake"></i> Friendly
+            </p>
+          </div>
 
+        </div>
+      </div>
+    </section> */}
 
    {/* Section 5: Wedding Couple Highlight */}
    
 <div className="bg-light">
 
-    <div className="container mb-5 my-5 p-3">
+    <div className="container mb-5">
+       <h2 className="text-center bold mb-4 py-4">Wedding Moments</h2>
   <div className="row align-items-center">
     
     {/* Left Column: Text and Button */}
@@ -531,7 +558,7 @@ Every frame we capture is filled with passion, precision, and artistry. With our
     {/* Right Column: Image */}
     <div className="col-md-6 mt-4 mt-md-0">
       <img
-        src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
+        src="first_img.jpg"
         alt="Wedding Couple"
         className="img-fluid img-height "
         onError={(e) => {
@@ -546,9 +573,20 @@ Every frame we capture is filled with passion, precision, and artistry. With our
 </div>
 
     <div className="container my-5 p-3">
+     
   <div className="row align-items-center">
     
     {/* Left Column: Text and Button */}
+    <div className="col-md-6 mt-4 mt-md-0">
+      <img src="third.jpg"
+        alt="Wedding Couple"
+        className="img-fluid img-height"
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = "https://placehold.co/800x600/CCCCCC/333333?text=Image+Unavailable";
+        }}
+      />
+    </div>
     <div className="col-md-6">
       <h2 className="fw-bold mb-3">Sai Kruthi & Bharathi</h2>
       <p className="text-secondary mb-4">
@@ -562,17 +600,7 @@ Every frame we capture is filled with passion, precision, and artistry. With our
     </div>
 
     {/* Right Column: Image */}
-    <div className="col-md-6 mt-4 mt-md-0">
-      <img
-        src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
-        alt="Wedding Couple"
-        className="img-fluid img-height"
-        onError={(e) => {
-          e.target.onerror = null;
-          e.target.src = "https://placehold.co/800x600/CCCCCC/333333?text=Image+Unavailable";
-        }}
-      />
-    </div>
+    
     
 
   </div>
@@ -580,6 +608,7 @@ Every frame we capture is filled with passion, precision, and artistry. With our
 </div>
     {/* Section 6: Testimonial Carousel */}
   <div className="testimonial-carousel-wrapper mt-5 mb-5 bg-white p-5">
+  <h2 className="text-center mb-4">What Our Clients Say</h2>
   <div
     className={`testimonial-track ${isTestimonialTransitioning ? "transition" : ""}`}
     style={{

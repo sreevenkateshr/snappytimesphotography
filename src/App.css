@@ -63,6 +63,7 @@ footer ul.nav .nav-link:hover {
   height: 300px;
   width: 100%;
   border-radius: 20px;
+  object-fit: cover;
 }
 
 .carousel-control-next, .carousel-control-prev {
@@ -711,7 +712,7 @@ footer ul.nav .nav-link:hover {
   width: 8px;
   height: 8px;
   background-color: #bbb;
-  border-radius: 30%;
+  border-radius: 50%;
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
@@ -730,7 +731,8 @@ footer ul.nav .nav-link:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  padding: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .category-item {
@@ -789,7 +791,7 @@ footer ul.nav .nav-link:hover {
   flex: 0 0 calc((100% - 48px) / 4); 
   /* 48px = 16px * 3 gaps between 4 cards */
   background: #fff;
-  height: 320px;
+  height: 220px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
    
   text-align: center;
@@ -829,14 +831,14 @@ footer ul.nav .nav-link:hover {
   gap: 6px;
   margin-top: 10px;
   position: relative;
-  bottom: 0px;
+  bottom: -15px;
 }
 
 .testimonial-indicators .dot {
   width: 8px;
   height: 8px;
   background: #bbb;
-  border-radius: 10%;
+  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -1770,7 +1772,7 @@ footer ul.nav .nav-link:hover {
 }
 
 /* Overlay text on hover */
-.overlay-text {
+.overlay-text1 {
   position: absolute;
   bottom: 10px;
   left: 0;
@@ -1785,7 +1787,7 @@ footer ul.nav .nav-link:hover {
   transition: transform 0.3s ease;
 }
 
-.image-wrappers:hover .overlay-text {
+.image-wrappers:hover .overlay-text1 {
   transform: translateY(0);
 }
 
@@ -1921,5 +1923,45 @@ footer ul.nav .nav-link:hover {
 }
 
 
+.why-choose-us {
+  background: #f8f9fa; /* light background */
+  border-radius: 12px;
+  
+}
+
+.why-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #222;
+  position: relative;
+  display: inline-block;
+}
+
+.why-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #22c55e; /* green accent */
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.why-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.why-features {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.why-features i {
+  color: #22c55e; /* icon color */
+  margin: 0 4px;
+}
 
 
