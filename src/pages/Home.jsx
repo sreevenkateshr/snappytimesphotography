@@ -413,10 +413,11 @@ const handleTouchMove = (e) => {
           <p className="text-uppercase small text-muted">HELLO, WE ARE GLAD YOU FOUND US!</p>
           <h1 className="fw-bold mb-3 hero-heading">Welcome to Snappy Times Photography!</h1>
           <p className="hero-paragraph">
-            We are one of the top wedding photography studios around the country that has started to expand its horizons throughout the globe. Our team of wedding photographers is here to assist you in having a meaningful, stress-free, and real event while uniquely documenting your love. We want to be available for you all day long and that includes from the get go.
+            At Snappy Times, we take pride in being among the best wedding photography studios in the country, now capturing love stories across the globe. Our team of professional wedding photographers is dedicated to making your big day meaningful, stress-free, and unforgettable while beautifully documenting every heartfelt moment.
             <br /><br />
-            
-            We also do Creative pre-wedding photography for our bride and groom. We are passionate about each and every frame, and our team works very hard to make sure that you will cherish your special day for a lifetime with their expert wedding photography; we have always enjoyed being a part of a distinctive Indian Wedding, and we can't wait to be a part of yours!
+From the first look to the final celebration, we are by your side, ensuring your memories are preserved with timeless elegance. We also specialize in creative pre-wedding photography, designed to reflect the unique bond between every bride and groom.
+            <br /><br />
+Every frame we capture is filled with passion, precision, and artistry. With our affordable wedding photography packages, you can relive your special day for a lifetime without compromising on quality. Having been part of countless vibrant Indian weddings, we look forward to creating breathtaking memories for yours too!
           </p>
         </div>
 
@@ -669,11 +670,11 @@ const handleTouchMove = (e) => {
 
 
 
-
 <div className="container my-5">
   <h2 className="text-center mb-4">Photography FAQs</h2>
   <div className="accordion" id="accordionPanelsStayOpenExample">
-    
+
+    {/* FAQ 1 */}
     <div className="accordion-item">
       <h2 className="accordion-header" id="panelsStayOpen-headingOne">
         <button className="accordion-button" type="button" data-bs-toggle="collapse"
@@ -690,58 +691,76 @@ const handleTouchMove = (e) => {
       </div>
     </div>
 
+    {/* FAQ 2 */}
     <div className="accordion-item">
       <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
           data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
           aria-controls="panelsStayOpen-collapseTwo">
-          How long does it take to receive the final photos?
+          Why should we choose a candid wedding photographer for our big day?
         </button>
       </h2>
       <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse"
         aria-labelledby="panelsStayOpen-headingTwo">
         <div className="accordion-body">
-          Final edited images are delivered within 2–3 weeks. During peak season, delivery might take up to 4 weeks.
+          A candid wedding photographer captures genuine emotions, natural moments, and unscripted beauty, giving you wedding pictures that feel real, authentic, and timeless.
         </div>
       </div>
     </div>
 
+    {/* FAQ 3 */}
     <div className="accordion-item">
       <h2 className="accordion-header" id="panelsStayOpen-headingThree">
         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
           data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
           aria-controls="panelsStayOpen-collapseThree">
-          Do you travel for destination photography?
+          Do you offer both photography and wedding films?
         </button>
       </h2>
       <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse"
         aria-labelledby="panelsStayOpen-headingThree">
         <div className="accordion-body">
-          Yes, we travel worldwide for destination weddings and shoots. Travel and accommodation charges may apply.
+          Yes! Our team specializes in both beautiful wedding pictures and cinematic wedding films so you can relive your special day in the most heartfelt way.
         </div>
       </div>
     </div>
 
+    {/* FAQ 4 */}
     <div className="accordion-item">
       <h2 className="accordion-header" id="panelsStayOpen-headingFour">
         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
           data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
           aria-controls="panelsStayOpen-collapseFour">
-          Can we request specific styles or poses?
+          How long does it take to deliver the final wedding photos and films?
         </button>
       </h2>
       <div id="panelsStayOpen-collapseFour" className="accordion-collapse collapse"
         aria-labelledby="panelsStayOpen-headingFour">
         <div className="accordion-body">
-          Absolutely! We welcome your ideas and will work with you to capture your preferred styles and poses.
+          On average, your photos are delivered within 4–6 weeks, while wedding films take 6–8 weeks. We also provide a sneak peek within a few days of your wedding.
+        </div>
+      </div>
+    </div>
+
+    {/* FAQ 5 */}
+    <div className="accordion-item">
+      <h2 className="accordion-header" id="panelsStayOpen-headingFive">
+        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseFive">
+          How can we book you for our wedding?
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseFive" className="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingFive">
+        <div className="accordion-body">
+          Simply get in touch through our contact page. We recommend booking early, as dates fill up quickly, especially during wedding season.
         </div>
       </div>
     </div>
 
   </div>
 </div>
-
-
 
 
     </div>

@@ -4,11 +4,16 @@ export default function Footer() {
   return (
     <>
       {/* BOOK US NOW Section */}
-      <div className="bg-danger-subtle text-white py-4" style={{ backgroundColor: '#d94694' }}>
+      <div
+        className="text-white py-4"
+        style={{ backgroundColor: '#d94694' }}
+      >
         <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
           <div>
             <h4 className="fw-bold mb-1">BOOK US NOW</h4>
-            <p className="mb-0">Get in touch with us and let us make your special day an event of your lifetime using our digital eye.</p>
+            <p className="mb-0">
+              Get in touch with us and let us make your special day unforgettable through our creative photography.
+            </p>
           </div>
           <div className="mt-3 mt-md-0 d-flex align-items-center gap-2 fs-5">
             <i className="bi bi-telephone-fill me-2"></i>
@@ -18,51 +23,50 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Section */}
- <footer className="footer-container">
-  <div className="footer-left">
-    <h4>Why Choose Us?</h4>
-    <p>
-      With years of experience and a passion for storytelling, Snappy Photography
-      brings your moments to life. From weddings to portraits, we capture it all with
-      creativity, care, and clarity.
-    </p>
-    <p>
-  <i className="fas fa-camera-retro"></i> Professional &nbsp;|&nbsp;
-  <i className="fas fa-palette"></i> Creative &nbsp;|&nbsp;
-  <i className="fas fa-handshake"></i> Friendly
-</p>
-  </div>
+      <footer className="bg-light text-dark py-5">
+        <div className="container">
+          <div className="row gy-4">
+            
+            {/* Left */}
+            <div className="col-md-4">
+              <h5 className="fw-bold mb-3">Get in Touch</h5>
+              <p className="mb-1">📧 Snappytimesphotography@gmail.com</p>
+              <p>📍 Chennai, India</p>
+            </div>
 
-  <div className="footer-center">
-    <h4>Capturing Moments, Crafting Stories</h4>
-    <p>
-      At Snappy Photography, we believe every photo tells a story .
-      Whether it’s a fleeting smile, a quiet glance, or a vibrant celebration,
-      we’re here to freeze those emotions in time with passion and precision.
-    </p>
-    <p className="footer-signature">— The Snappy Team</p>
-  </div>
+            {/* Center */}
+            <div className="col-md-4 text-center">
+              <h5 className="fw-bold mb-3">Capturing Moments, Crafting Stories</h5>
+              <p>
+                At Snappy Photography, every picture is more than an image — it’s a story waiting to be told. 
+                With an eye for detail and heart for emotions, we turn your moments into timeless treasures.
+              </p>
+              <p className="fst-italic mb-0">— The Snappy Team</p>
+            </div>
 
-  <div className="footer-right">
-    <h4>Contact</h4>
-    <p>Email: hello@myphotography.com</p>
-    <p>Phone: +91 98765 43210</p>
-    <p>Location: Chennai, India</p>
+            {/* Right */}
+            <div className="col-md-4 text-md-end text-center">
+              <h5 className="fw-bold mb-3">Contact</h5>
+              <p className="mb-1">📧 contact@snappyphotography.com</p>
+              <p className="mb-1">📞 +91 98765 43210</p>
 
-    <div className="social-icons">
-      <i className="fab fa-facebook-f"></i>
-      <i className="fab fa-instagram"></i>
-      <i className="fab fa-twitter"></i>
-      <i className="fab fa-youtube"></i>
-    </div>
-  </div>
-</footer>
+              {/* Social Icons */}
+              <div className="d-flex justify-content-md-end justify-content-center gap-3 fs-5 mt-2">
+                <a href="#" className="text-dark"><i className="bi bi-facebook"></i></a>
+                <a href="#" className="text-dark"><i className="bi bi-instagram"></i></a>
+                <a href="#" className="text-dark"><i className="bi bi-twitter-x"></i></a>
+                <a href="#" className="text-dark"><i className="bi bi-youtube"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </footer>
 
       {/* Copyright */}
-      <div className="bg-white py-2 border-top">
+      <div className="bg-white py-3 border-top">
         <div className="container text-center small text-muted">
-          Copyright © SnappyTimes {new Date().getFullYear()} - All rights reserved |
-          Developed by 
+          © {new Date().getFullYear()} SnappyTimes — All rights reserved | Developed by <span className="fw-semibold"></span>
         </div>
       </div>
 
@@ -71,14 +75,14 @@ export default function Footer() {
         href="https://wa.me/919840767566"
         target="_blank"
         rel="noopener noreferrer"
-        className="btn position-fixed d-flex justify-content-center align-items-center"
+        className="btn position-fixed d-flex justify-content-center align-items-center shadow"
         style={{
           bottom: '20px',
           left: '20px',
           borderRadius: '50%',
           backgroundColor: '#25D366',
-          width: '48px',
-          height: '48px',
+          width: '50px',
+          height: '50px',
           zIndex: 1000,
         }}
         title="Chat on WhatsApp"
@@ -88,15 +92,15 @@ export default function Footer() {
 
       {/* Scroll to Top Button */}
       <button
-        className="btn position-fixed d-flex justify-content-center align-items-center"
+        className="btn position-fixed d-flex justify-content-center align-items-center shadow"
         style={{
           bottom: '20px',
           right: '20px',
           borderRadius: '50%',
           backgroundColor: '#000',
           color: '#fff',
-          width: '48px',
-          height: '48px',
+          width: '50px',
+          height: '50px',
           zIndex: 1000,
         }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
