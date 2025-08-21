@@ -149,9 +149,9 @@ export default function Header() {
                 <Nav.Link as={Link} to="/about" className="nav-underline">
                   About Us
                 </Nav.Link>
-                <Nav.Link as={Link} to="/contact" className="nav-underline">
+                {/* <Nav.Link as={Link} to="/contact" className="nav-underline">
                   Contact Us
-                </Nav.Link>
+                </Nav.Link> */}
                 <Nav.Link as={Link} to="/blogs" className="nav-underline">
                   Blogs
                 </Nav.Link>
