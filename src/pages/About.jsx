@@ -59,10 +59,7 @@ export default function About() {
       <div id="next-section" className="container py-5"  >
         <h2 className="text-center mt-5 mb-4 fw-bold">Snappy Photography</h2>
         <p className="lead text-center justify-content-center mb-5">
-          Snappy Photography has captured over 10,000 beautiful moments across 12 locations. With
-          a dedicated team of 200+ passionate professionals, we specialize in making your special
-          day unforgettable. From vibrant traditional weddings to modern celebrations, we craft
-          stories that last forever.
+         At Snappy Times Photography, we believe every love story deserves to be told in the most beautiful and timeless way. Our passion is to create beautiful wedding pictures that capture genuine emotions, precious details, and unforgettable memories from your big day.
         </p>
       </div>
 
@@ -74,38 +71,57 @@ export default function About() {
           className="owner-img  rounded-circle shadow"
           style={{ width: '200px', height: '200px', objectFit: 'cover' }}
         />
-        <h4 className="mt-3">Mr. Arjun Verma</h4>
+        <h4 className="mt-3">Mr. Rahul T.K</h4>
         <p>Founder & Creative Director</p>
       </div>
    <div className="photography-details bg-light py-5">
       
-      {/* Why Choose Us */}
-      <div className="container mb-5">
-        <h2 className="text-center mb-4 fw-bold">Why Choose Us</h2>
-        <div className="row text-center">
-          <div className="col-md-4 mb-4 fade-in-up">
-            <div className="icon-box">
-             <div className="icon"><i className="fas fa-camera-retro"></i></div>
-              <h5>DSLR + Drone Shoots</h5>
-              <p>Capture every angle in 4K ultra clarity.</p>
-            </div>
-          </div>
-          <div className="col-md-4 mb-4 fade-in-up">
-            <div className="icon-box">
-              <div className="icon"><i className="fas fa-clock"></i></div> 
-              <h5>On-Time Delivery</h5>
-              <p>Quick turnaround without quality compromise.</p>
-            </div>
-          </div>
-          <div className="col-md-4 mb-4 fade-in-up">
-            <div className="icon-box">
-              <div className="icon"><i className="fas fa-paint-brush"></i></div> 
-              <h5>Custom Editing</h5>
-              <p>Tailored effects that match your story.</p>
-            </div>
-          </div>
+{/* Why Choose Us */}
+<div className="container mb-5">
+  <h2 className="text-center mb-4 fw-bold">Why Choose Us</h2>
+  <div className="row text-center">
+    <div className="col-md-3 mb-4 fade-in-up">
+      <div className="icon-box p-4 shadow rounded h-100">
+        <div className="icon-circle mx-auto mb-3">
+          <i className="fas fa-camera-retro"></i>
         </div>
+        <h6 className="fw-bold">DSLR + Drone Shoots</h6>
+        <p className="text-muted small">Capture every angle in 4K ultra clarity.</p>
       </div>
+    </div>
+
+    <div className="col-md-3 mb-4 fade-in-up">
+      <div className="icon-box p-4 shadow rounded h-100">
+        <div className="icon-circle mx-auto mb-3">
+          <i className="fas fa-clock"></i>
+        </div>
+        <h6 className="fw-bold">On-Time Delivery</h6>
+        <p className="text-muted small">Quick turnaround without quality compromise.</p>
+      </div>
+    </div>
+
+    <div className="col-md-3 mb-4 fade-in-up">
+      <div className="icon-box p-4 shadow rounded h-100">
+        <div className="icon-circle mx-auto mb-3">
+          <i className="fas fa-paint-brush"></i>
+        </div>
+        <h6 className="fw-bold">Custom Editing</h6>
+        <p className="text-muted small">Tailored effects that match your story.</p>
+      </div>
+    </div>
+
+    <div className="col-md-3 mb-4 fade-in-up">
+      <div className="icon-box p-4 shadow rounded h-100">
+        <div className="icon-circle mx-auto mb-3">
+          <i className="fas fa-heart"></i>
+        </div>
+        <h6 className="fw-bold">Memories that Last</h6>
+        <p className="text-muted small">We deliver timeless photos for life.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       {/* Meet the Team */}
       <div className="container mb-5">
