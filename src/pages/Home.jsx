@@ -699,98 +699,288 @@ Every frame we capture is filled with passion, precision, and artistry. With our
 
 
 
-<div className="container my-5">
-  <h2 className="text-center mb-4">Photography FAQs</h2>
-  <div className="accordion" id="accordionPanelsStayOpenExample">
+ <div className="container my-5">
+      <h2 className="text-center mb-4">Photography FAQs</h2>
+      <div className="accordion" id="accordionPanelsStayOpenExample">
 
-    {/* FAQ 1 */}
-    <div className="accordion-item">
-      <h2 className="accordion-header" id="panelsStayOpen-headingOne">
-        <button className="accordion-button" type="button" data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-          aria-controls="panelsStayOpen-collapseOne">
-          What is included in your wedding photography package?
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show"
-        aria-labelledby="panelsStayOpen-headingOne">
-        <div className="accordion-body">
-          Our wedding package includes full-day coverage, an online gallery, high-resolution edited photos, and a custom photo album.
+        {/* FAQ 1 */}
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingOne">
+            <button
+              className="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              Why should we choose a candid wedding photographer for our big day?
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            className="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionPanelsStayOpenExample"
+          >
+            <div className="accordion-body">
+              A candid wedding photographer captures genuine emotions, natural moments,
+              and unscripted beauty, giving you wedding pictures that feel real,
+              authentic, and timeless.
+            </div>
+          </div>
         </div>
+
+        {/* FAQ 2 */}
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingTwo">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              Do you offer both photography and wedding films?
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#accordionPanelsStayOpenExample"
+          >
+            <div className="accordion-body">
+              Yes! Our team specializes in both beautiful wedding pictures and
+              cinematic wedding films so you can relive your special day in the most
+              heartfelt way.
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ 3 */}
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingThree">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              How do you ensure our photos look natural and not staged?
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingThree"
+            data-bs-parent="#accordionPanelsStayOpenExample"
+          >
+            <div className="accordion-body">
+              We focus on candid photography, blending into your celebration and
+              capturing genuine laughter, tears, and joy without interrupting the flow
+              of your wedding.
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ 4 */}
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingFour">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              Can we customize our wedding photography package?
+            </button>
+          </h2>
+          <div
+            id="collapseFour"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingFour"
+            data-bs-parent="#accordionPanelsStayOpenExample"
+          >
+            <div className="accordion-body">
+              Absolutely. We offer flexible packages to suit your budget and vision,
+              from intimate weddings to grand celebrations.
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ 5 */}
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingFive">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFive"
+              aria-expanded="false"
+              aria-controls="collapseFive"
+            >
+              How many edited photos will we receive from our wedding?
+            </button>
+          </h2>
+          <div
+            id="collapseFive"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingFive"
+            data-bs-parent="#accordionPanelsStayOpenExample"
+          >
+            <div className="accordion-body">
+              Depending on your package, you’ll receive a curated collection of
+              beautiful wedding pictures, each professionally edited for timeless
+              elegance.
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ 6 */}
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingSix">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSix"
+              aria-expanded="false"
+              aria-controls="collapseSix"
+            >
+              Do you travel for destination weddings?
+            </button>
+          </h2>
+          <div
+            id="collapseSix"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingSix"
+            data-bs-parent="#accordionPanelsStayOpenExample"
+          >
+            <div className="accordion-body">
+              Yes! We love capturing destination weddings and are available to travel
+              anywhere to create unforgettable memories for you.
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ 7 */}
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingSeven">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSeven"
+              aria-expanded="false"
+              aria-controls="collapseSeven"
+            >
+              How long does it take to deliver the final wedding photos and films?
+            </button>
+          </h2>
+          <div
+            id="collapseSeven"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingSeven"
+            data-bs-parent="#accordionPanelsStayOpenExample"
+          >
+            <div className="accordion-body">
+              On average, your photos are delivered within 4–6 weeks, while wedding
+              films take 6–8 weeks. We also provide a sneak peek within a few days of
+              your wedding.
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ 8 */}
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingEight">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseEight"
+              aria-expanded="false"
+              aria-controls="collapseEight"
+            >
+              What makes your wedding photography style unique?
+            </button>
+          </h2>
+          <div
+            id="collapseEight"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingEight"
+            data-bs-parent="#accordionPanelsStayOpenExample"
+          >
+            <div className="accordion-body">
+              Our style is a blend of creativity and storytelling—we focus on capturing
+              candid emotions while also curating cinematic frames that feel dreamy yet
+              real.
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ 9 */}
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingNine">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseNine"
+              aria-expanded="false"
+              aria-controls="collapseNine"
+            >
+              Do you offer pre-wedding or engagement shoots?
+            </button>
+          </h2>
+          <div
+            id="collapseNine"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingNine"
+            data-bs-parent="#accordionPanelsStayOpenExample"
+          >
+            <div className="accordion-body">
+              Yes, we offer pre-wedding and engagement photography sessions, perfect for
+              couples who want to create beautiful pictures before their big day.
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ 10 */}
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingTen">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTen"
+              aria-expanded="false"
+              aria-controls="collapseTen"
+            >
+              How can we book you for our wedding?
+            </button>
+          </h2>
+          <div
+            id="collapseTen"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingTen"
+            data-bs-parent="#accordionPanelsStayOpenExample"
+          >
+            <div className="accordion-body">
+              Simply get in touch through our contact page. We recommend booking early,
+              as dates fill up quickly, especially during wedding season.
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    {/* FAQ 2 */}
-    <div className="accordion-item">
-      <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
-        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-          aria-controls="panelsStayOpen-collapseTwo">
-          Why should we choose a candid wedding photographer for our big day?
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse"
-        aria-labelledby="panelsStayOpen-headingTwo">
-        <div className="accordion-body">
-          A candid wedding photographer captures genuine emotions, natural moments, and unscripted beauty, giving you wedding pictures that feel real, authentic, and timeless.
-        </div>
-      </div>
-    </div>
-
-    {/* FAQ 3 */}
-    <div className="accordion-item">
-      <h2 className="accordion-header" id="panelsStayOpen-headingThree">
-        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-          aria-controls="panelsStayOpen-collapseThree">
-          Do you offer both photography and wedding films?
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse"
-        aria-labelledby="panelsStayOpen-headingThree">
-        <div className="accordion-body">
-          Yes! Our team specializes in both beautiful wedding pictures and cinematic wedding films so you can relive your special day in the most heartfelt way.
-        </div>
-      </div>
-    </div>
-
-    {/* FAQ 4 */}
-    <div className="accordion-item">
-      <h2 className="accordion-header" id="panelsStayOpen-headingFour">
-        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
-          aria-controls="panelsStayOpen-collapseFour">
-          How long does it take to deliver the final wedding photos and films?
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseFour" className="accordion-collapse collapse"
-        aria-labelledby="panelsStayOpen-headingFour">
-        <div className="accordion-body">
-          On average, your photos are delivered within 4–6 weeks, while wedding films take 6–8 weeks. We also provide a sneak peek within a few days of your wedding.
-        </div>
-      </div>
-    </div>
-
-    {/* FAQ 5 */}
-    <div className="accordion-item">
-      <h2 className="accordion-header" id="panelsStayOpen-headingFive">
-        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
-          aria-controls="panelsStayOpen-collapseFive">
-          How can we book you for our wedding?
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseFive" className="accordion-collapse collapse"
-        aria-labelledby="panelsStayOpen-headingFive">
-        <div className="accordion-body">
-          Simply get in touch through our contact page. We recommend booking early, as dates fill up quickly, especially during wedding season.
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
 
     </div>
 
