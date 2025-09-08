@@ -14,8 +14,13 @@ import Indoor from './pages/Indoor';
 import Hindu from './pages/hindu';
 import Muslim from './pages/muslim';
 import Christain from './pages/christain';
-
-
+import Galleryfirst from './pages/galleryone';
+import Gallerytwo from './pages/gallerytwo';
+import Gallerythree from './pages/gallerythree';
+import Galleryfour from './pages/galleryfour';
+import Galleryfive from './pages/galleryfive';
+import Gallerysix from './pages/gallerysix';
+import Galleryseven from './pages/galleryseven';
 
 
 
@@ -39,6 +44,14 @@ function App() {
           <Route path="/hindu" element={<Hindu />} />
           <Route path="/muslim" element={<Muslim />} /> 
           <Route path="/christian" element={<Christain />} />
+          <Route path="/galleryfirst" element={<Galleryfirst/>}/>
+          <Route path="/gallerytwo" element={<Gallerytwo/>}/>
+          <Route path="/gallerythree" element={<Gallerythree/>}/>
+          <Route path="/galleryfour" element={<Galleryfour/>}/>
+          <Route path="/galleryfive" element={<Galleryfive/>}/>
+          <Route path="/gallerysix" element={<Gallerysix/>}/>
+          <Route path="/galleryseven" element={<Galleryseven/>}/>
+
           
         </Routes>
      {/* </main>*/}

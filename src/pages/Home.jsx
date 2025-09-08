@@ -1,6 +1,6 @@
 import React, { useState, useEffect,useRef } from 'react';
 import Slider from "react-slick";
-
+import { useNavigate } from "react-router-dom";
 import { FaInstagram, FaFacebookF } from 'react-icons/fa';
 import { Navbar, Nav, Button, Container, Carousel, Offcanvas ,NavDropdown,} from 'react-bootstrap';
 import '../App.css'; // optional, for custom styles
@@ -19,7 +19,7 @@ const WeddingPhotography = () => {
     "second.jpg",
     "four.jpg",
   ];
-
+const navigate = useNavigate();
  const [index, setIndex] = useState(0); // real index
 const [visibleCount, setVisibleCount] = useState(window.innerWidth <= 768 ? 4 : 5);
 const [isTransitioning, setIsTransitioning] = useState(true);
@@ -187,9 +187,13 @@ const handleTestimonialDotClick = (i) => {
 };
 
 const images = [
-  'first_img.jpg', 'second.jpg', 'third.jpg', 'four.jpg', 'five.jpg',
-  'first_img.jpg', 'second.jpg', 'third.jpg', 'four.jpg', 'five.jpg',
+  { src: "first_img.jpg", route: "/galleryfirst" },
+  { src: "second.jpg", route: "/gallerytwo" },
+  { src: "third.jpg", route: "/gallerythree" },
+  { src: "four.jpg", route: "/galleryfour" },
+  { src: "five.jpg", route: "/galleryfive" },
 ];
+
 
 
 const MAX_VISIBLE = 3;
@@ -550,7 +554,7 @@ Every frame we capture is filled with passion, precision, and artistry. With our
         Their love story is no less of a Bollywood tale. Everything about this 
         wedding looked like it was taken out of a movie.
       </p>
-      <button className="btn btn-outline-danger btn-lg rounded-pill shadow">
+      <button className="btn btn-outline-danger btn-lg rounded-pill shadow"  onClick={() => navigate("/galleryseven")} >
         Explore Wedding Albums
       </button>
     </div>
@@ -561,10 +565,7 @@ Every frame we capture is filled with passion, precision, and artistry. With our
         src="first_img.jpg"
         alt="Wedding Couple"
         className="img-fluid img-height "
-        onError={(e) => {
-          e.target.onerror = null;
-          e.target.src = "https://placehold.co/800x600/CCCCCC/333333?text=Image+Unavailable";
-        }}
+       
       />
     </div>
     
@@ -581,10 +582,7 @@ Every frame we capture is filled with passion, precision, and artistry. With our
       <img src="third.jpg"
         alt="Wedding Couple"
         className="img-fluid img-height"
-        onError={(e) => {
-          e.target.onerror = null;
-          e.target.src = "https://placehold.co/800x600/CCCCCC/333333?text=Image+Unavailable";
-        }}
+       
       />
     </div>
     <div className="col-md-6">
@@ -594,7 +592,7 @@ Every frame we capture is filled with passion, precision, and artistry. With our
         Their love story is no less of a Bollywood tale. Everything about this 
         wedding looked like it was taken out of a movie.
       </p>
-      <button className="btn btn-outline-danger btn-lg rounded-pill shadow">
+      <button className="btn btn-outline-danger btn-lg rounded-pill shadow"  onClick={() => navigate("/gallerysix")} >
         Explore Wedding Albums
       </button>
     </div>
@@ -650,7 +648,7 @@ Every frame we capture is filled with passion, precision, and artistry. With our
       onTouchEnd={handleTouchEnd}
     >
       <div className="seamless-carousel-inner">
-        {images.map((src, i) => {
+        {images.map((img, i) => {
           const offset = getRelativeIndex(i);
           if (Math.abs(offset) > MAX_VISIBLE) return null;
 
@@ -671,8 +669,11 @@ Every frame we capture is filled with passion, precision, and artistry. With our
                 opacity,
               }}
             >
-              <img src={src} alt={`carousel-${i}`} />
-              <button className="click-btn">Click Here</button>
+              <img src={img.src} alt={`carousel-${i}`} />
+              <button
+                className="click-btn"
+                onClick={() => navigate(img.route)}
+              >Click here</button>
             </div>
           );
         })}
