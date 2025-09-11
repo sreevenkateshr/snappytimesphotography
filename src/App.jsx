@@ -8,6 +8,7 @@ import Blog from './pages/Blog';
 import Galleries from './pages/Galleries';
 import Services from './pages/Services';
 import Birthday from './pages/Birthday';
+import Kevinalbum from './pages/Kevinalbum';
 import Testimonial from './pages/Testimonial';
 import Outdoor from './pages/Outdoor';
 import Indoor from './pages/Indoor';
@@ -38,6 +39,7 @@ function App() {
           <Route path="/galleries" element={<Galleries />} />
           <Route path="/wedding" element={<Services />} />
           <Route path="/birthday" element={<Birthday />} />
+          <Route path="/kevinalbum" element={<Kevinalbum />} />
           <Route path="/testimonials" element={<Testimonial />} />
           <Route path="/outdoor" element={<Outdoor />} />
           <Route path="/indoor" element={<Indoor />} />
@@ -61,3 +63,5 @@ function App() {
 }
 
 export default App;
+
+

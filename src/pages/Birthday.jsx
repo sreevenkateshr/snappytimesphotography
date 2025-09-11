@@ -1,6 +1,8 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
+import { Link } from "react-router-dom";
+
 export default function Birthday() {
   
   return (
@@ -55,75 +57,77 @@ export default function Birthday() {
 </section>
 
 {/* 2. Featured Birthday Albums Carousel */}
-   <section className="mb-5">
+  <section className="mb-5"> 
   <h2 className="text-center mb-4">Birthday Albums</h2>
   <div className="container">
     <div className="row justify-content-center">
-      {/* Left Carousel */}
+
+      {/* Left Carousel - Aadhavan Album */}
       <div className="col-md-6 mb-4 d-flex flex-column align-items-center carousel-wrapper">
-        <Carousel
-          interval={3000}
-          fade
-          className="w-75"
-          controls={false}
-          indicators={false}
-        >
-          <Carousel.Item>
-            <img
-              className="d-block mx-auto rounded shadow"
-              src="second.jpg"
-              alt="Aarav's Birthday"
-              style={{ width: "400px", height: "600px", objectFit: "cover" }}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block mx-auto rounded shadow"
-              src="third.jpg"
-              alt="Aarav Album 2"
-              style={{ width: "400px", height: "600px", objectFit: "cover" }}
-            />
-          </Carousel.Item>
-        </Carousel>
-        <h5 className="mt-2 text-center">Aarav's Birthday</h5>
+        <Link to="/kevinalbum" className="text-decoration-none text-dark">
+          <Carousel
+            interval={3000}
+            fade
+            className="w-75"
+            controls={false}
+            indicators={false}
+          >
+            <Carousel.Item>
+              <img
+                className="d-block mx-auto rounded shadow"
+                src="second.jpg"
+                alt="Aarav's Birthday"
+                style={{ width: "400px", height: "600px", objectFit: "cover" }}
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block mx-auto rounded shadow"
+                src="third.jpg"
+                alt="Aarav Album 2"
+                style={{ width: "400px", height: "600px", objectFit: "cover" }}
+              />
+            </Carousel.Item>
+          </Carousel>
+          <h5 className="mt-2 text-center">Aadhavan's Birthday</h5>
+        </Link>
       </div>
 
-      {/* Right Carousel */}
+      {/* Right Carousel - Kevin Album */}
       <div className="col-md-6 mb-4 d-flex flex-column align-items-center carousel-wrapper">
-        <Carousel
-          interval={3000}
-          fade
-          className="w-75"
-          controls={false}
-          indicators={false}
-        >
-          <Carousel.Item>
-            <img
-              className="d-block mx-auto rounded shadow"
-              src="first_img.jpg"
-              alt="Ramya's Birthday"
-              style={{ width: "400px", height: "600px", objectFit: "cover" }}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block mx-auto rounded shadow"
-              src="second.jpg"
-              alt="Ramya Album 2"
-              style={{ width: "400px", height: "600px", objectFit: "cover" }}
-            />
-          </Carousel.Item>
-        </Carousel>
-        <h5 className="mt-2 text-center">Ramya's Birthday</h5>
+        <Link to="/kevinalbum" className="text-decoration-none text-dark">
+          <Carousel
+            interval={3000}
+            fade
+            className="w-75"
+            controls={false}
+            indicators={false}
+          >
+            <Carousel.Item>
+              <img
+                className="d-block mx-auto rounded shadow"
+                src="first_img.jpg"
+                alt="Ramya's Birthday"
+                style={{ width: "400px", height: "600px", objectFit: "cover" }}
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block mx-auto rounded shadow"
+                src="second.jpg"
+                alt="Ramya Album 2"
+                style={{ width: "400px", height: "600px", objectFit: "cover" }}
+              />
+            </Carousel.Item>
+          </Carousel>
+          <h5 className="mt-2 text-center">Kevin's Birthday</h5>
+        </Link>
       </div>
     </div>
   </div>
 </section>
 
-
 {/* Auto sliding setup */}
-
-
 <div className="text-center mb-5">
         <h2 className="display-5 fw-bold">Birthday Photography</h2>
         <blockquote className="blockquote mt-3">
