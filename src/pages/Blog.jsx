@@ -120,11 +120,12 @@ const toggleReadMore = (index) => {
 
 
       {visibleBlogs < blogsData.length && (
-        <div className="text-center mt-4">
-          <Button variant="outline-primary" onClick={handleLoadMore}>
-            Load More
-          </Button>
-        </div>
+        <div className="mt-4" style={{ display: "flex", justifyContent: "center" }}>
+  <button className="buttonbirth" onClick={handleLoadMore}>
+    <span>Load More</span>
+  </button>
+</div>
+
       )}
     </Container>
     </div>

@@ -28,7 +28,7 @@ export default function Birthday() {
   <div className="row g-4">
     <div className="col-md-4">
       <img
-        src="five.jpg"
+        src="Kev22.webp"
         className="img-fluid rounded object-fit-cover theme-image"
         style={{ width: "400px", height: "400px", objectFit: "cover", margin: "0 auto", display: "block" }}
         alt="Kids Theme"
@@ -37,7 +37,7 @@ export default function Birthday() {
     </div>
     <div className="col-md-4">
       <img
-        src="four.jpg"
+        src="Kev13.webp"
         className="img-fluid rounded object-fit-cover theme-image"
         style={{ width: "400px", height: "400px", objectFit: "cover", margin: "0 auto", display: "block" }}
         alt="Cake Smash"
@@ -46,7 +46,7 @@ export default function Birthday() {
     </div>
     <div className="col-md-4">
       <img
-        src="third.jpg"
+        src="Kev8.webp"
         className="img-fluid rounded object-fit-cover theme-image"
         style={{ width: "400px", height: "400px", objectFit: "cover", margin: "0 auto", display: "block" }}
         alt="Elegant Party"
@@ -63,39 +63,45 @@ export default function Birthday() {
     <div className="row justify-content-center">
 
       {/* Left Carousel - Aadhavan Album */}
-      <div className="col-md-6 mb-4 d-flex flex-column align-items-center carousel-wrapper">
-        <Link to="/kevinalbum" className="text-decoration-none text-dark">
-          <Carousel
-            interval={3000}
-            fade
-            className="w-75"
-            controls={false}
-            indicators={false}
-          >
-            <Carousel.Item>
-              <img
-                className="d-block mx-auto rounded shadow"
-                src="second.jpg"
-                alt="Aarav's Birthday"
-                style={{ width: "400px", height: "600px", objectFit: "cover" }}
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block mx-auto rounded shadow"
-                src="third.jpg"
-                alt="Aarav Album 2"
-                style={{ width: "400px", height: "600px", objectFit: "cover" }}
-              />
-            </Carousel.Item>
-          </Carousel>
-          <h5 className="mt-2 text-center">Aadhavan's Birthday</h5>
-        </Link>
-      </div>
+     <div className="col-md-6 mb-4 d-flex flex-column align-items-center carousel-wrapper">
+  <Carousel
+    interval={3000}
+    fade
+    className="w-75"
+    controls={false}
+    indicators={false}
+  >
+    <Carousel.Item>
+      <img
+        className="d-block mx-auto rounded shadow"
+        src="Kev1.webp"
+        alt="Aarav's Birthday"
+        style={{ width: "400px", height: "600px", objectFit: "cover" }}
+      />
+    </Carousel.Item>
+    <Carousel.Item>
+      <img
+        className="d-block mx-auto rounded shadow"
+        src="Kev2.webp"
+        alt="Aarav Album 2"
+        style={{ width: "400px", height: "600px", objectFit: "cover" }}
+      />
+    </Carousel.Item>
+  </Carousel>
+
+  {/* Title */}
+  <h5 className="mt-2 text-center">Kevin's Birthday</h5>
+
+  {/* Button below */}
+  <button className='buttonbirth' onClick={() => window.location.href = "/kevinalbum"}>
+    <span>Explore Album</span>
+  </button>
+</div>
+
 
       {/* Right Carousel - Kevin Album */}
       <div className="col-md-6 mb-4 d-flex flex-column align-items-center carousel-wrapper">
-        <Link to="/kevinalbum" className="text-decoration-none text-dark">
+       
           <Carousel
             interval={3000}
             fade
@@ -106,7 +112,7 @@ export default function Birthday() {
             <Carousel.Item>
               <img
                 className="d-block mx-auto rounded shadow"
-                src="first_img.jpg"
+                src="Kev4.webp"
                 alt="Ramya's Birthday"
                 style={{ width: "400px", height: "600px", objectFit: "cover" }}
               />
@@ -114,14 +120,16 @@ export default function Birthday() {
             <Carousel.Item>
               <img
                 className="d-block mx-auto rounded shadow"
-                src="second.jpg"
+                src="Kev18.webp"
                 alt="Ramya Album 2"
                 style={{ width: "400px", height: "600px", objectFit: "cover" }}
               />
             </Carousel.Item>
           </Carousel>
           <h5 className="mt-2 text-center">Kevin's Birthday</h5>
-        </Link>
+       <button className='buttonbirth' onClick={() => window.location.href = "/kevinalbum"}>
+    <span>Explore Album</span>
+  </button>
       </div>
     </div>
   </div>

@@ -61,6 +61,7 @@ export default function About() {
         <p className="lead text-center justify-content-center mb-5">
          At Snappy Times Photography, we believe every love story deserves to be told in the most beautiful and timeless way. Our passion is to create beautiful wedding pictures that capture genuine emotions, precious details, and unforgettable memories from your big day.
         </p>
+         
       </div>
 
       {/* Section 3: Owner Image */}
@@ -74,6 +75,32 @@ export default function About() {
         <h4 className="mt-3">Mr. Rahul T.K</h4>
         <p>Founder & Creative Director</p>
       </div>
+      <div className="container mb-5">
+  <div className="row align-items-center">
+    
+    {/* Left Column - Our Journey */}
+    <div className="col-md-6 mb-4" data-aos="fade-right">
+      <h3 className="fw-bold mb-3">Our Journey</h3>
+      <p className="text-muted">
+        What started as a creative passion has grown into a full-service photography 
+        studio trusted by couples for delivering the best wedding photography experiences. 
+        With years of expertise, our team of professional wedding photographers has 
+        documented countless love stories, each one unique and deeply meaningful.
+      </p>
+    </div>
+
+    {/* Right Column - Your Story, Our Passion */}
+    <div className="col-md-6 mb-4" data-aos="fade-left">
+      <h3 className="fw-bold mb-3">Your Story, Our Passion</h3>
+      <p className="text-muted">
+        At Snappy Times Photography, we don’t just take photos—we preserve your love 
+        story for generations to come. From romantic portraits to candid moments, our 
+        goal is to provide you with the beautiful wedding pictures you’ll treasure forever.
+      </p>
+    </div>
+
+  </div>
+</div>
    <div className="photography-details bg-light py-5">
       
 {/* Why Choose Us */}

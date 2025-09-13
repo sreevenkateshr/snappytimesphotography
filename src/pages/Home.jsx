@@ -417,7 +417,7 @@ const handleTouchMove = (e) => {
           <p className="text-uppercase small text-muted">HELLO, WE ARE GLAD YOU FOUND US!</p>
           <h1 className="fw-bold mb-3 hero-heading">Welcome to Snappy Times Photography!</h1>
           <p className="hero-paragraph">
-            At Snappy Times, we take pride in being among the best wedding photography studios in the country, now capturing love stories across the globe. Our team of professional wedding photographers is dedicated to making your big day meaningful, stress-free, and unforgettable while beautifully documenting every heartfelt moment.
+           At Snappy Times, we take pride in being among the best wedding photography studios in the country, now capturing love stories across the globe. Our team of professional wedding photographers is dedicated to making your big day meaningful, stress-free, and unforgettable while beautifully documenting every heartfelt moment.
             <br /><br />
 From the first look to the final celebration, we are by your side, ensuring your memories are preserved with timeless elegance. We also specialize in creative pre-wedding photography, designed to reflect the unique bond between every bride and groom.
             <br /><br />
@@ -472,8 +472,9 @@ Every frame we capture is filled with passion, precision, and artistry. With our
       Transforming genuine happiness into eternal imagery!
     </p>
     <p style={{ fontSize: '1.1rem', color: '#6c757d' }}>
-      What is more fantastic than a perfect dreamy wedding? It is an honor for us to be there to witness your special day with our candid wedding films that you never dreamt of.
-      We want to create a memory for you with our wedding photographers and cinematographers so that you can relive your day over and over.
+     What could be more magical than a perfect dreamy wedding? As your trusted Wedding photographer, it’s an honor for us to capture the real emotions, laughter, and love that make your day unforgettable. With our artistic vision and passion, we create timeless films and beautiful wedding pictures that allow you to relive every precious moment, again and again.<br/><br/>
+Our wedding photographers and cinematographers blend creativity with authenticity, ensuring every frame tells your unique love story. From intimate candid shots to breathtaking cinematic sequences, we turn fleeting moments into everlasting memories you’ll treasure forever.
+
     </p>
   </div>
 </div>
