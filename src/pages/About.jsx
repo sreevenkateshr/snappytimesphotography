@@ -112,7 +112,7 @@ export default function About() {
         <div className="icon-circle mx-auto mb-3">
           <i className="fas fa-camera-retro"></i>
         </div>
-        <h6 className="fw-bold">DSLR + Drone Shoots</h6>
+        <h6 className="fw-bold">DSLR </h6>
         <p className="text-muted small">Capture every angle in 4K ultra clarity.</p>
       </div>
     </div>
@@ -151,7 +151,7 @@ export default function About() {
 
 
       {/* Meet the Team */}
-      <div className="container mb-5">
+      {/* <div className="container mb-5">
         <h2 className="text-center mb-4 fw-bold">Meet the Team</h2>
         <div className="row text-center">
           {team.map((member, i) => (
@@ -162,7 +162,7 @@ export default function About() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Our Process */}
        <div className="our-process-section py-5 bg-light">

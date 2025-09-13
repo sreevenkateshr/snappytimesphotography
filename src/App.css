@@ -2024,3 +2024,9 @@ footer ul.nav .nav-link:hover {
 .buttonbirth:active {
   transform: scale(0.9);
 }
+
+.custom-btn:hover{
+      background-color: #fff!important; 
+      color: #2c247d ;
+      border: 2px solid #2c247d!important; 
+}

@@ -95,86 +95,80 @@ export default function Header() {
               </Link>
             </Offcanvas.Header>
 
-            <Offcanvas.Body className="d-flex flex-column align-items-center justify-content-center text-center mulish">
-              <Nav className="flex-column flex-lg-row justify-content-end align-items-center w-100 text-center">
+           <Offcanvas.Body className="d-flex flex-column align-items-center justify-content-center text-center mulish">
+  <Nav className="flex-column flex-lg-row justify-content-end align-items-center w-100 text-center">
 
-                {/* Wedding Dropdown */}
-                <div
-                  onMouseEnter={() => setShowDropdown('wedding')}
-                  onMouseLeave={() => setShowDropdown(null)}
-                >
-                  <NavDropdown
-                    title={<span className="nav-underline">Wedding</span>}
-                    id="wedding-dropdown"
-                    show={showDropdown === 'wedding'}
-                    menuVariant="light"
-                    className="nav-dropdown-hover"
-                  >
-                    <NavDropdown.Item as={Link} to="/hindu">
-                      Hindu
-                    </NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/christian">
-                      Christian
-                    </NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/muslim">
-                      Muslim
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                </div>
+    {/* Wedding Dropdown */}
+    <div
+      onMouseEnter={() => setShowDropdown('wedding')}
+      onMouseLeave={() => setShowDropdown(null)}
+    >
+      <NavDropdown
+        title={<span className="nav-underline">Wedding</span>}
+        id="wedding-dropdown"
+        show={showDropdown === 'wedding'}
+        menuVariant="light"
+        className="nav-dropdown-hover"
+      >
+        <NavDropdown.Item as={Link} to="/hindu" onClick={() => setOffcanvasShow(false)}>
+          Hindu
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/christian" onClick={() => setOffcanvasShow(false)}>
+          Christian
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/muslim" onClick={() => setOffcanvasShow(false)}>
+          Muslim
+        </NavDropdown.Item>
+      </NavDropdown>
+    </div>
 
-                {/* Baby Photography Dropdown */}
-                <div
-                  onMouseEnter={() => setShowDropdown('baby')}
-                  onMouseLeave={() => setShowDropdown(null)}
-                >
-                  <NavDropdown
-                    title={<span className="nav-underline">Baby Photography</span>}
-                    id="baby-dropdown"
-                    show={showDropdown === 'baby'}
-                    menuVariant="light"
-                    className="nav-dropdown-hover"
-                  >
-                    <NavDropdown.Item as={Link} to="/birthday">
-                      Birthday
-                    </NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/indoor">
-                      Indoor
-                    </NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/outdoor">
-                      Outdoor
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                </div>
+    {/* Baby Photography Dropdown */}
+    <div
+      onMouseEnter={() => setShowDropdown('baby')}
+      onMouseLeave={() => setShowDropdown(null)}
+    >
+      <NavDropdown
+        title={<span className="nav-underline">Baby Photography</span>}
+        id="baby-dropdown"
+        show={showDropdown === 'baby'}
+        menuVariant="light"
+        className="nav-dropdown-hover"
+      >
+        <NavDropdown.Item as={Link} to="/birthday" onClick={() => setOffcanvasShow(false)}>
+          Birthday
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/indoor" onClick={() => setOffcanvasShow(false)}>
+          Indoor
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/outdoor" onClick={() => setOffcanvasShow(false)}>
+          Outdoor
+        </NavDropdown.Item>
+      </NavDropdown>
+    </div>
 
-                <Nav.Link as={Link} to="/about" className="nav-underline">
-                  About Us
-                </Nav.Link>
-                {/* <Nav.Link as={Link} to="/contact" className="nav-underline">
-                  Contact Us
-                </Nav.Link> */}
-                <Nav.Link as={Link} to="/blogs" className="nav-underline">
-                  Blogs
-                </Nav.Link>
-                <Nav.Link as={Link} to="/testimonials" className="nav-underline">
-                  Testimonials
-                </Nav.Link>
+    {/* Other links */}
+    <Nav.Link as={Link} to="/about" className="nav-underline" onClick={() => setOffcanvasShow(false)}>
+      About Us
+    </Nav.Link>
+    <Nav.Link as={Link} to="/blogs" className="nav-underline" onClick={() => setOffcanvasShow(false)}>
+      Blogs
+    </Nav.Link>
+    <Nav.Link as={Link} to="/testimonials" className="nav-underline" onClick={() => setOffcanvasShow(false)}>
+      Testimonials
+    </Nav.Link>
 
-                {/* Buttons */}
-                <div className="d-flex gap-2 mt-3 mt-lg-0">
-                  {/* Get A Quote → Contact Page */}
-                  <Button as={Link} to="/contact" variant="outline-warning">
-                    Get A Quote
-                  </Button>
-                  {/* Call Now → Direct Call */}
-                  <Button
-                    variant="outline-success"
-                    href="tel:+916374926377"
-                  >
-                    Book Now
-                  </Button>
-                </div>
-              </Nav>
-            </Offcanvas.Body>
+    {/* Buttons */}
+    <div className="d-flex gap-2 mt-3 mt-lg-0">
+      <Button as={Link} to="/contact" variant="outline-warning" onClick={() => setOffcanvasShow(false)}>
+        Get A Quote
+      </Button>
+      <Button variant="outline-success" href="tel:+916374926377" onClick={() => setOffcanvasShow(false)}>
+        Book Now
+      </Button>
+    </div>
+  </Nav>
+</Offcanvas.Body>
+
           </Navbar.Offcanvas>
         </Container>
       </Navbar>

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
+import { useNavigate } from "react-router-dom";
 export default function Birthday() {
   const galleryImages = ["first_img.jpg", "second.jpg","third.jpg","four.jpg","five.jpg","first_img.jpg"];
-
+ const navigate=useNavigate();
   
   return (
 
@@ -44,7 +45,7 @@ export default function Birthday() {
     </div>
 
       {/* Props & Backdrops Section */}
-      <section className="bg-light py-5 props-section">
+      {/* <section className="bg-light py-5 props-section">
   <div className="container">
     <h2 className="text-center mb-5 fancy-heading">Props & Backdrops</h2>
     <div className="row justify-content-center text-center">
@@ -65,11 +66,11 @@ export default function Birthday() {
       ))}
     </div>
   </div>
-</section>
+</section> */}
 
 
       {/* Birthday Outfit Inspirations */}
-      <section className="container py-5">
+      {/* <section className="container py-5">
   <h2 className="text-center fancy-heading mb-5">Birthday Outfit Inspirations</h2>
   <div className="row justify-content-center">
     {[
@@ -90,7 +91,7 @@ export default function Birthday() {
       </div>
     ))}
   </div>
-</section>
+</section> */}
 
   <section className="bg-white py-5 album-section">
   <div className="container">
@@ -120,6 +121,14 @@ export default function Birthday() {
         </div>
       ))}
     </div>
+     <div className="text-center mt-4">
+     <button
+            className="btn btn-outline-danger btn-lg rounded-pill shadow "
+            onClick={() => navigate("/kevinalbum")}
+          >
+            Explore Albums
+          </button>
+          </div>
   </div>
 </section>
 

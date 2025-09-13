@@ -47,6 +47,50 @@ export default function Testimonial() {
         <p className="lead text-center text-muted mb-5">
           Real stories from our happy clients who trusted us with their special moments.
         </p>
+          <div className=" my-4">
+             <div className="card shadow-lg border-0 rounded-4 p-3 d-flex flex-md-row align-items-center justify-content-between  "  style={{ backgroundColor: "rgb(255,255,255)"}}>
+        
+        {/* Left: Logo + Details */}
+        <div className="d-flex align-items-center gap-3">
+          <img
+            src="logo.jpg" // replace with SnappyTimes logo
+            alt="SnappyTimes Logo"
+            width="80"
+            height="80"
+            className="border "
+          />
+          <div>
+            <h5 className="fw-bold mb-1">SNAPPYTIMES PHOTOGRAPHY</h5>
+            <p className="mb-2 text-muted small">
+             123 Main Street, Anna Nagar
+              Near Tower Junction, Nagercoil
+              Kanyakumari District, Tamil Nadu – 629001
+            </p>
+            <div className="d-flex align-items-center">
+  <i className="bi bi-star-fill text-warning"></i>
+  <i className="bi bi-star-fill text-warning"></i>
+  <i className="bi bi-star-fill text-warning"></i>
+  <i className="bi bi-star-fill text-warning"></i>
+  <i className="bi bi-star-half text-warning"></i>
+  <span className="fw-semibold ms-2">4.9</span>
+</div>
+          </div>
+        </div>
+
+        {/* Right: Google Maps Button */}
+        <div className="mt-3 mt-md-0">
+          <a
+            href="https://www.google.com/maps/place/Nagercoil,+Kanyakumari,+Tamil+Nadu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary rounded-pill px-4 fw-bold custom-btn"
+            style={{ backgroundColor: "#2c247d", border: "none" }}
+          >
+            VIEW ON GOOGLE MAPS
+          </a>
+        </div>
+      </div>
+      </div>
         <Row className="g-4">
           {featuredTestimonials.map((testimonial, index) => (
             <Col xs={12} md={6} key={index}>
