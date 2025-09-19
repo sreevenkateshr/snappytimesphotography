@@ -2030,3 +2030,71 @@ footer ul.nav .nav-link:hover {
       color: #2c247d ;
       border: 2px solid #2c247d!important; 
 }
+
+input[type="date"]:before {
+  content: attr(placeholder);
+  color: #6c757d;
+  margin-right: 0.5em;
+}
+
+input[type="date"]:focus:before,
+input[type="date"]:valid:before {
+  content: "" !important;
+}
+
+/* Masonry Layout */
+.masonry {
+  column-count: 6;
+  column-gap: 12px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 12px;
+  cursor: pointer;
+  display: block;
+  border: 5px solid #fff;   /* fixed border */
+  border-radius: 8px;
+  overflow: hidden;         /* keeps image inside border */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+/* Images inside */
+.masonry-item img {
+  width: 100%;
+  height: 100%;              /* fills container height */
+  
+  transition: transform 0.3s ease;
+  object-fit: cover;       /* show full image, no crop */
+    /* center inside border */
+ 
+}
+
+/* Hover effect — only image zooms */
+.masonry-item:hover img {
+  transform: scale(1.1);   /* zoom inside */
+}
+
+/* Orientation styles */
+.masonry-item.horizontal img {
+  height: 180px;
+}
+
+.masonry-item.vertical img {
+  height: 280px;
+}
+
+.masonry-item.square img {
+  height: 220px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .masonry { column-count: 3; }
+}
+@media (max-width: 768px) {
+  .masonry { column-count: 2; }
+}
+@media (max-width: 576px) {
+  .masonry { column-count: 2; }
+}

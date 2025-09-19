@@ -20,7 +20,7 @@ export default function Birthday() {
 
         {/* 1. Birthday Themes Showcase */}
         {/* 1. Theme Inspirations */}
-        <section className=" mt-5 mb-5">
+        {/* <section className=" mt-5 mb-5">
           <h2 className="text-center mb-4">Theme Inspirations</h2>
           <div className="row g-4">
             <div className="col-md-4">
@@ -69,7 +69,7 @@ export default function Birthday() {
               <h5 className="text-center mt-2">Elegant Party</h5>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* 2. Featured Birthday Albums Carousel */}
        <section className="mb-5">

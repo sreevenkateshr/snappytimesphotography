@@ -23,7 +23,14 @@ export default function Contact() {
             <form>
               <input className="form-control mt-5 mb-4 rounded-3 input-custom" placeholder="Name" required />
               <input className="form-control mt-5 mb-4 rounded-3 input-custom" type="email" placeholder="Email" required />
-              <input className="form-control  mt-5 mb-4 rounded-3 input-custom" type="date" required />
+             
+  <input
+  className="form-control mt-5 mb-4 rounded-3 input-custom"
+  type="date"
+  placeholder="Select event date"
+  required
+/>
+
               <textarea className="form-control mt-5 mb-4 rounded-3 input-custom" rows="3" placeholder="Message"></textarea>
               <button className="btn btn-dark px-4 py-2 rounded-3 w-100">Send Message</button>
             </form>

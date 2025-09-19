@@ -83,7 +83,7 @@ export default function Header() {
             className="bg-dark text-white full-width-offcanvas"
           >
             <Offcanvas.Header closeButton className="bg-dark text-white">
-              <Link to="/" className="d-flex align-items-center text-white text-decoration-none">
+              <Link to="/" className="d-flex align-items-center text-white text-decoration-none" onClick={() => setOffcanvasShow(false)}>
                 <img
                   src="logo.jpg"
                   alt="Logo"
@@ -145,14 +145,31 @@ export default function Header() {
         </NavDropdown.Item>
       </NavDropdown>
     </div>
+    
+
+     <div
+      onMouseEnter={() => setShowDropdown('about')}
+      onMouseLeave={() => setShowDropdown(null)}
+    >
+      <NavDropdown
+        title={<span className="nav-underline">About Us</span>}
+        id="about-dropdown"
+        show={showDropdown === 'about'}
+        menuVariant="light"
+        className="nav-dropdown-hover "
+      >
+        <NavDropdown.Item as={Link} to="/about" onClick={() => setOffcanvasShow(false)}>
+          About Us
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/blogs" onClick={() => setOffcanvasShow(false)}>
+          Blogs
+        </NavDropdown.Item>
+        
+      </NavDropdown>
+    </div>
 
     {/* Other links */}
-    <Nav.Link as={Link} to="/about" className="nav-underline" onClick={() => setOffcanvasShow(false)}>
-      About Us
-    </Nav.Link>
-    <Nav.Link as={Link} to="/blogs" className="nav-underline" onClick={() => setOffcanvasShow(false)}>
-      Blogs
-    </Nav.Link>
+    
     <Nav.Link as={Link} to="/testimonials" className="nav-underline" onClick={() => setOffcanvasShow(false)}>
       Testimonials
     </Nav.Link>

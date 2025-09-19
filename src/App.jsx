@@ -22,6 +22,7 @@ import Galleryfour from './pages/galleryfour';
 import Galleryfive from './pages/galleryfive';
 import Gallerysix from './pages/gallerysix';
 import Galleryseven from './pages/galleryseven';
+import ToTop from "./components/Top";
 
 
 
@@ -30,7 +31,7 @@ function App() {
     <Router>
       <Header />
     {/*<main className="container my-4">*/}
-        
+        <ToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
