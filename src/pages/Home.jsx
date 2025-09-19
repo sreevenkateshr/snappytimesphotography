@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
+import AOS from "aos";
+
+import "aos/dist/aos.css";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import {
   Navbar,
@@ -14,6 +17,9 @@ import {
 import "../App.css"; // optional, for custom styles
 
 const WeddingPhotography = () => {
+   useEffect(() => {
+      AOS.init({ duration: 800, easing: "ease-in-out", once: true });
+    }, []);
   const image = [
     "five.jpg",
     "four.jpg",
@@ -461,7 +467,7 @@ const WeddingPhotography = () => {
       <div id="next-section" className="wedding-photography bg-light">
         {/* Section 1: Hero with Image and Text */}
         <div className="container my-5">
-          <div className="row align-items-center">
+          <div className="row align-items-center"  data-aos="fade-up">
             {/* Left: Text Content */}
             <div className="col-lg-6 text-md-start text-center mb-4 mb-lg-0">
               <p className="text-uppercase small text-muted">
@@ -507,7 +513,7 @@ const WeddingPhotography = () => {
         </div>
 
         {/* Section 2: Full-width Container with Text and Image */}
-        <div className="custom-carousel-container py-5">
+        <div className="custom-carousel-container py-5"  data-aos="fade-up">
           <div
             ref={trackRef}
             className="custom-carousel-track"
@@ -542,7 +548,7 @@ const WeddingPhotography = () => {
 
         {/* Section 3: Centered Text */}
         <div
-          className="d-flex justify-content-center align-items-center text-center mt-5"
+          className="d-flex justify-content-center align-items-center text-center mt-5"  data-aos="fade-up"
           style={{ minHeight: "30vh" }}
         >
           <div style={{ maxWidth: "700px" }}>
@@ -568,7 +574,7 @@ const WeddingPhotography = () => {
         </div>
         {/* Section 4: Full-width Image with Text Overlay */}
         <div className="bg-white">
-          <div className="wedding-category-section p-5 ">
+          <div className="wedding-category-section p-5 "  data-aos="fade-up">
             <h2 className="text-center bold mb-4 py-2">
               Explore Our Wedding Photography Categories
             </h2>
@@ -635,7 +641,7 @@ const WeddingPhotography = () => {
             <h2 className="text-center bold mb-4 py-4">Wedding Moments</h2>
             <div className="row align-items-center">
               {/* Left Column: Text and Button */}
-              <div className="col-md-6 order-2 order-md-2">
+              <div className="col-md-6 order-2 order-md-2"  data-aos="fade-up">
                 <h2 className="fw-bold mb-3">Sai Kruthi & Bharathi</h2>
                 <p className="text-secondary mb-4">
                   A sweet tale of love, from fighting as colleagues to falling
@@ -663,7 +669,7 @@ const WeddingPhotography = () => {
           </div>
 
           <div className="container my-5 p-3">
-            <div className="row align-items-center">
+            <div className="row align-items-center"  data-aos="fade-up">
               {/* Left Column: Text and Button */}
               <div className="col-md-6 mt-4 mt-md-0">
                 <img
@@ -693,7 +699,7 @@ const WeddingPhotography = () => {
           </div>
         </div>
         {/* Section 6: Testimonial Carousel */}
-        <div className="testimonial-carousel-wrapper mt-5 mb-5 bg-white p-5">
+        <div className="testimonial-carousel-wrapper mt-5 mb-5 bg-white p-5"  data-aos="fade-up">
           <h2 className="text-center mb-4">What Our Clients Say</h2>
           <div
             className={`testimonial-track ${
@@ -743,6 +749,7 @@ const WeddingPhotography = () => {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+           data-aos="fade-up"
         >
           <div className="seamless-carousel-inner">
             {images.map((img, i) => {
@@ -780,7 +787,7 @@ const WeddingPhotography = () => {
         </div>
 
         <div
-          className="counter-section py-5 bg-white text-center"
+          className="counter-section py-5 bg-white text-center" data-aos="fade-up"
           ref={sectionRef}
         >
           <div className="container">
@@ -801,7 +808,7 @@ const WeddingPhotography = () => {
 
         <div className="container my-5">
           <h2 className="text-center mb-4">Photography FAQs</h2>
-          <div className="accordion" id="accordionPanelsStayOpenExample">
+          <div className="accordion" id="accordionPanelsStayOpenExample"  data-aos="fade-up">
             {/* FAQ 1 */}
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingOne">

@@ -3,8 +3,15 @@ import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 export default function Birthday() {
+  useEffect(() => {
+    AOS.init({ duration: 800, easing: "ease-in-out", once: true });
+  }, []);
   const navigate=useNavigate();
   return (
     <div>
@@ -76,7 +83,7 @@ export default function Birthday() {
   <h2 className="text-center mb-4">Birthday Albums</h2>
 
   {/* Kevin's Birthday */}
-  <div className="container">
+  <div className="container" data-aos="fade-up">
     <div className="row align-items-center">
       {/* Image First in Mobile */}
       <div className="col-md-6 order-1 order-md-2 mt-4 mt-md-0 text-center">
@@ -115,7 +122,7 @@ export default function Birthday() {
   </div>
 
   {/* Arun's Birthday */}
-  <div className="container my-5 p-3">
+  <div className="container my-5 p-3" data-aos="fade-up">
     <div className="row align-items-center">
       {/* Image First in Mobile */}
       <div className="col-md-6 order-1 order-md-1 mt-4 mt-md-0 text-center">
@@ -156,7 +163,7 @@ export default function Birthday() {
 
 
         {/* Auto sliding setup */}
-        <div className="text-center mb-5">
+        <div className="text-center mb-5" data-aos="fade-up">
           <h2 className="display-5 fw-bold">Birthday Photography</h2>
           <blockquote className="blockquote mt-3">
             <p className="mb-0">
@@ -227,7 +234,7 @@ export default function Birthday() {
         </section> */}
 
         {/* 5. FAQs */}
-        <section className="mb-5">
+        <section className="mb-5" data-aos="fade-up">
           <h2 className="text-center mb-4">FAQs</h2>
           <div className="accordion" id="faqAccordion">
             <div className="accordion-item">

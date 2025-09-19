@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { Container, Row, Col, Modal } from "react-bootstrap";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 export default function KevinAlbum() {
+  useEffect(() => {
+    Aos.init({ duration: 800, easing: "ease-in-out", once: true });
+  } , []);
   // 24 images
 
   // Group into 4 columns
@@ -55,7 +61,7 @@ export default function KevinAlbum() {
       </div>
 
       {/* Gallery */}
-      <section className="kevinalbum-gallery py-4">
+      <section className="kevinalbum-gallery py-4" >
         <Container fluid>
           <h2 className="text-center mb-4 fw-bold">Memories with Kevin 🎉</h2>
 
@@ -65,8 +71,9 @@ export default function KevinAlbum() {
                 key={index}
                 className={`masonry-item ${img.orientation}`}
                 onClick={() => handleImageClick(img.src)}
+                data-aos="fade-up"
               >
-                <img src={img.src} alt={`kevin-${index}`} loading="lazy" />
+                <img src={img.src} alt={`kevin-${index}`}  />
               </div>
             ))}
           </div>
@@ -74,11 +81,16 @@ export default function KevinAlbum() {
       </section>
 
       {/* Modal */}
-      <Modal show={!!selectedImage} onHide={handleClose} centered size="lg">
-        <Modal.Body className="p-0">
-          <img src={selectedImage} alt="selected" className="img-fluid w-100" />
-        </Modal.Body>
-      </Modal>
+     <Modal show={!!selectedImage} onHide={handleClose} centered size="lg" dialogClassName="custom-modal">
+  <Modal.Body className="p-0 position-relative">
+    <button className="close-btn" onClick={handleClose}>
+      &times;
+    </button>
+    <img src={selectedImage} alt="selected" className="img-fluid w-100 modal-image" />
+  </Modal.Body>
+</Modal>
+
+
     </div>
   );
 }

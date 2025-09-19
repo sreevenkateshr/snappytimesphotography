@@ -2,8 +2,13 @@ import React, { useState ,useEffect} from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import Slider from "react-slick";
 import { Container, Row, Col,Card } from 'react-bootstrap';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Christain() {
+  useEffect(() => {
+    Aos.init({ duration: 800, easing: "ease-in-out", once: true });
+  }   , []);
  const cardImages = [
   { src: 'first_img.jpg', title: 'Emily & James' },
   { src: 'second.jpg', title: 'Sarah & Michael' },
@@ -136,7 +141,7 @@ useEffect(() => {
       </section>
 
       {/* Section 2: Cards */}
-      <section className="photo-cards py-5">
+      <section className="photo-cards py-5" data-aos="fade-up">
         <Container>
           <Row>
             {cardImages.map((img, index) => (
@@ -153,7 +158,7 @@ useEffect(() => {
         </Container>
       </section>
 
-<section className="moments-section py-5 text-center">
+<section className="moments-section py-5 text-center" data-aos="fade-up">
   <Container>
     <h2 className="mb-4">Moments That Matter</h2>
     <Row className="g-4 justify-content-center">
@@ -176,7 +181,7 @@ useEffect(() => {
 
 
       {/* Section 3: Gallery */}
-         <section className="wedding-gallery py-5">
+         <section className="wedding-gallery py-5" data-aos="fade-up">
       <Container fluid>
         <h2 className="text-center mb-5">Wedding Gallery</h2>
         <Row className="gx-3 gy-3">
@@ -193,7 +198,7 @@ useEffect(() => {
         </Row>
       </Container>
     </section>
-<div className="container mt-5 mb-5">
+<div className="container mt-5 mb-5" data-aos="fade-up">
   <div id="customCarousel" className="carousel slide" data-bs-ride="carousel">
     <div className="carousel-inner">
       {carouselData.map((item, index) => (

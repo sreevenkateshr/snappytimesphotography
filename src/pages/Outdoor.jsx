@@ -1,8 +1,28 @@
 import React from "react";
 import { Container, Row, Col, Card, Button, Dropdown } from "react-bootstrap";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
+
+const concepts = [
+  { title: "Garden Party", subtitle: "Morning", img: "./second.jpg" },
+  { title: "Beach Celebration", subtitle: "Afternoon", img: "./third.jpg" },
+  { title: "Park Picnic", subtitle: "Evening", img: "./four.jpg" },
+  { title: "Fairy Lights Setup", subtitle: "Night", img: "./five.jpg" },
+];
+
+const rightConcepts = [
+  { title: "Vintage Theme", subtitle: "Classic Setup", img: "./second.jpg" },
+  { title: "Balloon Escape", subtitle: "Hilltop View", img: "./first_img.jpg" },
+  { title: "Seaside Vibe", subtitle: "Coastal Breeze", img: "./four.jpg" },
+  { title: "Wildlife Party", subtitle: "Nature Inspired", img: "./five.jpg" },
+];
 
 export default function Outdoor() {
+  useEffect(() => {
+    Aos.init({ duration: 800, easing: "ease-in-out", once: true });
+  }   , []);
 
   return (
     <div>
@@ -13,40 +33,42 @@ export default function Outdoor() {
         <h1 className="display-3 fw-bold">OUTDOOR</h1>
       </div>
              <section className="outdoor-section mt-5 py-5"id="next-section">
-      <Container >
+      <Container    data-aos="fade-up">
         <Row className="align-items-center">
-          {/* Text Column */}
-          <Col md={6} className="mb-4 mb-md-0">
-            <h2 className="outdoor-title">Our Outdoor<br />Photography Style</h2>
-            <p className="outdoor-subtitle">
-              We specialize in natural light, candid moments / cinematic storytelling.
-            </p>
+  {/* Text Column */}
+  <Col md={6} className="mb-4 mb-md-0">
+    <h2 className="outdoor-title">Birthday Outdoor<br />Photography</h2>
+    <p className="outdoor-subtitle">
+      Celebrate your special day with creative outdoor birthday themes and natural light photography.
+    </p>
 
-            <Row>
-              <Col xs={6}>
-                <ul className="outdoor-list">
-                  <li>Nature Portraits</li>
-                  <li>Couple Shoots</li>
-                  <li>Family Moments</li>
-                  <li>Pre-wedding</li>
-                  <li>Wildlife</li>
-                  <li>Beach Shoots</li>
-                  <li>Maternity Moments</li>
-                </ul>
-              </Col>
-              <Col xs={6}>
-                <ul className="outdoor-list">
-                  <li>Birthday Shoots</li>
-                  <li>Graduation Shoots</li>
-                  <li>Pet Photography</li>
-                  <li>Forest Trails</li>
-                  <li>Sunset Portraits</li>
-                  <li>Festive Occasions</li>
-                  <li>Solo Shoots</li>
-                </ul>
-              </Col>
-            </Row>
-          </Col>
+    <Row>
+      <Col xs={6}>
+        <ul className="outdoor-list">
+          <li>Garden Party</li>
+          <li>Balloon Setup</li>
+          <li>Beach Celebration</li>
+          <li>Fairy Lights</li>
+          <li>Picnic Style</li>
+          <li>Floral Backdrop</li>
+          <li>Poolside Party</li>
+        </ul>
+      </Col>
+      <Col xs={6}>
+        <ul className="outdoor-list">
+          <li>Cake Smash</li>
+          <li>Kids’ Play Area</li>
+          <li>Family Moments</li>
+          <li>Sunset Vibes</li>
+          <li>Night Sparkles</li>
+          <li>Friends Group Shots</li>
+          <li>Theme-based Decor</li>
+        </ul>
+      </Col>
+    </Row>
+  </Col>
+
+
 
           {/* Image Column */}
           <Col md={6}>
@@ -62,30 +84,45 @@ export default function Outdoor() {
       </Container>
     </section>
 
-              <div className="concepts-container">
+              <div className="concepts-container" data-aos="fade-up">
       {/* Left Side */}
       <div className="left-section">
-        <h2 className="title">Creative Concepts<br />for Outdoor Shoots</h2>
-        <p className="subtitle">Insderatihons ciensering suinio ciemms</p>
-        <div className="grid grid-left">
-          <div className="concept-card lakeside">Lakeside Park<br /><span>Morning movie</span></div>
-          <div className="concept-card forest">Forest Trail<br /><span>Midday</span></div>
-          <div className="concept-card rooftop">City Rooftop<br /><span>Sunset</span></div>
-          <div className="concept-card dunes">Desert Dunes<br /><span>Late afternoon</span></div>
-        </div>
+      <h2 className="title">Birthday Outdoor<br />Photography</h2>
+      <p className="subtitle">Capturing your special day with natural light and creative themes</p>
+      <div className="grid grid-left">
+        {concepts.map((item, index) => (
+          <div
+            key={index}
+            className="concept-card"
+            style={{ backgroundImage: `url(${item.img})` }}
+          >
+            {item.title}
+            <br />
+            <span>{item.subtitle}</span>
+          </div>
+        ))}
       </div>
+    </div>
+
 
       {/* Right Side */}
       <div className="right-section">
-        <div className="grid grid-right">
-          <div className="concept-card vintage">Vintage Picnic</div>
-          <div className="concept-card elopement">Mountain Elopement</div>
-          <div className="concept-card vibe">Costal Vibe</div>
-          <div className="concept-card wildlife">Wildlife</div>
-        </div>
+      <div className="grid grid-right">
+        {rightConcepts.map((item, index) => (
+          <div
+            key={index}
+            className="concept-card"
+            style={{ backgroundImage: `url(${item.img})` }}
+          >
+            {item.title}
+            <br />
+            <span>{item.subtitle}</span>
+          </div>
+        ))}
       </div>
     </div>
-         <section className="custom-portfolio">
+    </div>
+         <section className="custom-portfolio" data-aos="fade-up">
       <h2 className="portfolio-title">Our Portfolio</h2>
       <div className="portfolio-columns">
         {/* Column 1 */}

@@ -16,22 +16,18 @@ export default function Header() {
   const [offcanvasShow, setOffcanvasShow] = useState(false);
   const [showDropdown, setShowDropdown] = useState(null);
 
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-    const nextSection = document.getElementById("next-section");
+const handleScroll = () => {
+  const scrollY = window.scrollY;
 
-    if (!nextSection) return;
+  if (scrollY === 0) {
+    setNavbarClass("transparent"); // top of page
+  } else if (scrollY >= 300) {
+    setNavbarClass("dark"); // after 500px scroll
+  } else {
+    setNavbarClass("hidden"); // between 0 and 500px
+  }
+};
 
-    const nextSectionTop = nextSection.getBoundingClientRect().top;
-
-    if (scrollY === 0) {
-      setNavbarClass("transparent");
-    } else if (nextSectionTop <= 0) {
-      setNavbarClass("dark");
-    } else {
-      setNavbarClass("hidden");
-    }
-  };
 
   useEffect(() => {
     handleScroll();
@@ -169,6 +165,9 @@ export default function Header() {
     </div>
 
     {/* Other links */}
+    <Nav.Link as={Link} to="/galleries" className="nav-underline" onClick={() => setOffcanvasShow(false)}>
+      Galleries
+    </Nav.Link>
     
     <Nav.Link as={Link} to="/testimonials" className="nav-underline" onClick={() => setOffcanvasShow(false)}>
       Testimonials

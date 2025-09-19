@@ -1,6 +1,9 @@
 
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const blogsData = [
   {
@@ -67,6 +70,12 @@ const blogsData = [
 
 
 export default function Blog() {
+  useEffect(() => {
+    // Initialize AOS library
+    AOS.init({ duration: 800, easing: "ease-in-out", once: true });
+
+  }, []);
+    
     const [visibleBlogs, setVisibleBlogs] = useState(9); // Show 3 rows (3x3)
     const [expandedIndex, setExpandedIndex] = useState(null);
 
@@ -86,7 +95,7 @@ const toggleReadMore = (index) => {
         <h1 className="display-3 fw-bold">BLOGS</h1>
       </div>
           <Container className="py-5 mt-5" id="next-section">
-    <Row className="g-4">
+    <Row className="g-4" data-aos="fade-up">
   {blogsData.slice(0, visibleBlogs).map((blog, index) => (
     <Col key={index} xs={12} md={6} lg={4}>
       <Card className="h-100 shadow-sm rounded-4 overflow-hidden">

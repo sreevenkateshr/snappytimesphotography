@@ -2,7 +2,14 @@ import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import { useNavigate } from "react-router-dom";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
 export default function Birthday() {
+  useEffect(() => {
+    Aos.init({ duration: 800, easing: "ease-in-out", once: true });
+  }  , []);
   const galleryImages = ["first_img.jpg", "second.jpg","third.jpg","four.jpg","five.jpg","first_img.jpg"];
  const navigate=useNavigate();
   
@@ -27,9 +34,9 @@ export default function Birthday() {
       <section className="container py-5">
         <div className='text-center mb-5'>
         <h2 className="fancy-heading">Indoor Moments Gallery</h2></div>
-        <div className="row">
+        <div className="row" >
           {galleryImages.map((img, i) => (
-            <div key={i} className="col-md-4 mb-4 gallery-item">
+            <div key={i} className="col-md-4 mb-4 gallery-item " data-aos="fade-up">
               <div className="image-wrappers">
                 <img
                   src={img}
@@ -93,10 +100,10 @@ export default function Birthday() {
   </div>
 </section> */}
 
-  <section className="bg-white py-5 album-section">
+  <section className="bg-white py-5 album-section" >
   <div className="container">
     <h2 className="text-center fancy-heading mb-5">Birthday Album</h2>
-    <div className="polaroid-gallery">
+    <div className="polaroid-gallery" data-aos="fade-up">
       {[
         
         'third.jpg',
@@ -112,7 +119,7 @@ export default function Birthday() {
         'five.jpg',
         'third.jpg',
       ].map((image, i) => (
-        <div className={`polaroid-item tilt-${i % 3}`} key={i}>
+        <div className={`polaroid-item tilt-${i % 3}`} key={i} >
           <img
             src={image}
             alt={`Decor ${i + 1}`}
